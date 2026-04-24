@@ -1,0 +1,99 @@
+Chapter 1: Intro (works for ANY hardware)
+0:00Enthropic, enthropic, enthropic. You done goofed up. So just last night as I was vibe coding with my OpenClaw agent,
+0:066 secondsit notified me of an email that we received from the Enthropic team saying that all of the third party harnesses like OpenClaw and the Hermes agent are
+0:1515 secondsnot going to be allowed to use the Claude Code plans that we're running all of our workflows on. And this pissed off the entire community, myself included.
+0:2323 secondsBut the crazy thing that's happening in AI is that open- source models are becoming just as powerful as these closed source models that we're paying
+0:3030 secondsfor. And in this video, I'm going to show you guys how I got Cloud Code set up with the most powerful open-sourced model that uses 100 billion parameters,
+0:4040 secondsand I got it set up for free. In this video, I'm going to show you exactly how I did that so we can all set up our Claude Code system without paying
+0:4848 secondsAnthropic as a little jab to them for treating us so poorly. And the reason why I have to make this video today is because I've been using my Cloud Code
+0:5555 secondssystem with these open source models that I'm going to show you today. And the performance is literally the exact same. And my promise to you is that in
+1:041 minute, 4 secondsthis tutorial, you're going to be able to follow along using any type of hardware. Even the weakest toaster level hardware that you're running your system
+1:111 minute, 11 secondson will be able to follow along in this tutorial, which is honestly a massive game changer. And no one on the internet has shown you what I'm about to show you today. So guys, let's jump right into
+1:201 minute, 20 secondsthe computer. Please like and subscribe to the channel if you want personalized help. Check the links down below. We have the no code academy and I also help people one-on-one with their AI agencies. But now, let's dive right in.
+1:301 minute, 30 secondsSo, Enthropic may have banned OpenClaw,
+1:321 minute, 32 secondsbut this new setup is even better and it's 100% free. So, today's video overview is going to go through four chapters. We're going to talk about how
+Chapter 2: Claude Code + Local AI Video overview
+1:401 minute, 40 secondsthis actually works. How do we actually run Cloud Code with a free AI model?
+1:451 minute, 45 secondsFrom there, I'm going to break down what Olama is as an aggregator platform for us to access these different AI models and why they're so powerful. And there's
+1:531 minute, 53 secondsalso two types of AI models inside of Olama that we're going to talk about today, which is really important. I'll then explain what are the best free
+2:012 minutes, 1 secondmodels inside of Olama for this. And we're then going to select the one that we're going to run and set up together.
+2:062 minutes, 6 secondsAnd then once we have our model decided and we understand everything we need to know about Olama, we're going to go ahead step by step and we're going to
+2:132 minutes, 13 secondsget cloud code set up with this model so that we all have cloud code running for free even if you're running your hardware on a toaster. So how can we
+Chapter 3: How do we run free AI models with Claude Code?
+2:212 minutes, 21 secondseven run AI models that are free with cloud code? And the best example that I can give you is this plane analogy. So
+2:282 minutes, 28 secondsthe plane is like the harness. It's the thing that actually carries all of the different components. It carries the people in the plane. It carries the
+2:362 minutes, 36 secondsfuel. It carries all of the different machinery that is needed to make this plane actually fly. But the core thing
+2:432 minutes, 43 secondsthat runs the plane is the engine. And the engine is our AI model. So previously, right, we would be using Claude's AI models, whether it's Sonnet,
+2:522 minutes, 52 secondsHaiku, or Opus. And this was really cool because they also had their plan feature where we could use Claude through their
+2:592 minutes, 59 secondsplan instead of paying API credits so that we had the same bill every single month. But now we could just simply replace the engine of the cloud code
+3:083 minutes, 8 secondsharness with any AI model that we're running locally or in the cloud. And that's where Olama becomes so powerful for this use case. Now what is Olama and
+3:173 minutes, 17 secondswhat models are available inside of their platform. So Olama is a platform for running open-sourced large language models. All of the biggest open- sourced
+Chapter 4: What is Ollama? what models avail? (2 types)
+3:263 minutes, 26 secondscompanies in the world are hosting their models on Olama from Gemma 4 to Quen 3.5
+3:333 minutes, 33 secondsto Kimmy K 2.5. They all have different parameter sizes that we can then download onto our hardware. Now, there's
+3:403 minutes, 40 secondstwo types of ways that we can set up our agents using OAM. The first option is the local download option, which
+3:483 minutes, 48 secondsdownloads an AI model directly onto your computer. And so while your computer can handle the size of the model, then it
+3:563 minutes, 56 secondscan run completely locally on your computer without an internet connection.
+4:004 minutesSo for basically everyone watching the video, anything smaller than 8 billion parameter model like the Gemma 4 billion parameter model will be able to run on
+4:084 minutes, 8 secondsbasically all hardware. Now the limitations of this is that your tokens per second are going to be quite slow and sometimes the tool calling may be a
+4:164 minutes, 16 secondsbit buggy because it times out. And then the last problem with running this on local hardware is that your KV cache is going to start counting up. But the
+4:244 minutes, 24 secondsmassive breakthrough guys is that Olama also gives us a cloud hosted option to run the most powerful AI models for free
+4:334 minutes, 33 secondsin their cloud. So the Quen 3.5 100 billion parameter model is what I'm going to show you guys today. And if I
+4:404 minutes, 40 secondswanted to run that locally, I would have needed like five Mac studios which would have costed tens of thousands of dollars. But using the cloud option, I
+4:484 minutes, 48 secondscan now have Quen running at its most powerful level completely for free and I can just connect that to cloud code. So
+4:564 minutes, 56 secondsthat is a massive gamecher because that allows us to really use an AI model that is just as good or very close to as good
+5:025 minutes, 2 secondsas the leading edge models. So let's go ahead guys. Let's play around with. Let me show you guys what it's about. And then we're going to select the model that we're going to be using today. So
+Chapter 5: Ollama Dashboard Walkthrough & Model Breakdown
+5:115 minutes, 11 secondsinside of the Olama dashboard, we want to head over to the top left corner.
+5:155 minutes, 15 secondsSelect models. Now, this is where we can see all of the different models that are available to be used. And there's a couple things I want to break down before we look at all the specs. So,
+5:245 minutes, 24 secondsunder each model description, we can actually see the different capabilities that it has, as well as the model sizes
+5:315 minutes, 31 secondsand whether or not this model is able to be hosted in the cloud, which is really important. So, for Gemma 4, for example,
+5:405 minutes, 40 secondsit has vision understanding, tool calling, deep thinking. It can understand audio and it can be hosted in the cloud. On top of that, there's four
+5:485 minutes, 48 secondsdifferent models that we can run. But if we scroll down, we can see one of the most popular open source models, which is the Quen family of models. And in
+5:575 minutes, 57 secondsthis example, we're going to be using Quen 3.5. 4.9 million people have pulled this model and are running it locally.
+6:046 minutes, 4 secondsIt has vision, tool calling, and thinking, and it also has a cloud hosted service. And the craziest part about Quen is that we're going to be using the
+6:126 minutes, 12 secondscloud service with the 122 billion parameter model, which means that the inference time and the speed at which the agent's going to be able to conduct
+6:206 minutes, 20 secondsits reasoning and do tasks is going to be lightning fast. And when you guys see how this thing works, you're going to agree. So now, if we wanted to look at the capabilities of all of these models,
+Chapter 6: Qwen 3.5 100b is the model we are using
+6:306 minutes, 30 secondsall we would have to do is click inside of them. And in this use case, in this video, we're going to be setting up our agent using Quen 3.5. So let's open that
+6:376 minutes, 37 secondsbaby up. So, inside of Quinn 3.5 and inside of any of the model drop downs,
+6:416 minutes, 41 secondsit's going to show you all of the available models, as well as the size that is needed to be downloaded onto your computer for this thing to run properly. If you want a deeper
+6:506 minutes, 50 secondsunderstanding of which local model that you can actually download onto your hardware, simply ask your Claude agent or your Gemini agent or your Chat GBT
+6:596 minutes, 59 secondsagent about the specs of your computer and then it'll help you understand which models you can actually run properly.
+7:067 minutes, 6 secondsBut what we're going to be doing, we're going to be accessing Quen through the 397 billion parameter model in the cloud. And that means we can run this
+7:157 minutes, 15 secondsinsanely massive model with our cloud code harness completely for free. So now guys, let's set up the cloud code
+Chapter 7: FULL Claude Code + Ollama Setup
+7:237 minutes, 23 secondsharness with this free AI model. I'm going to walk you guys step by step. You can use VS Code, you can use cursor,
+7:307 minutes, 30 secondsanti-gravity, whatever IDE that you are most comfortable with, you can use. In this example, I'm going to be using cursor. So, we've got our cursor
+7:397 minutes, 39 secondsenvironment set up. Now, the first step is to actually download or pull in the open- source model that we're going to
+7:477 minutes, 47 secondsbe using. So, what we want to write inside of our terminal is o llama pull followed by a space. Then we want to go
+7:567 minutes, 56 secondsand find out of all of these models which one we actually want to run. And so in this use case, we're going to be
+8:028 minutes, 2 secondsrunning Quen 3.5 397B in the cloud. I'm going to copy that model name and we're going to add it to this command. From
+8:118 minutes, 11 secondsthere, we just have to smash enter and it's going to start pulling in the model. And this happened at lightning speed because your computer is not actually downloading any information.
+8:208 minutes, 20 secondsIt's connecting to the cloud model. And so if we were downloading a local model, this would have taken like 10 minutes.
+8:278 minutes, 27 secondsAnd so now guys, that we have the Quen 3.5 cloud model installed, we need to actually get Claude code set up. And
+8:358 minutes, 35 secondsinside of Olama's website, it's giving us this command line to actually get Cloud Code set up with Quen 3.5. But the problem with this command is that when
+8:448 minutes, 44 secondsyou do this command with the model itself, it's going to download the local model onto your computer. So since we already have the cloud model downloaded,
+8:528 minutes, 52 secondswe just need to run this command line here. So we're going to paste that in Olama launch cloud. And now it's going to show me all of the recommended AI
+9:019 minutes, 1 secondmodels that it wants us to run this agent on as well as the model that we've already downloaded. So once you download Quen 3.5 cloud, you're going to be able
+9:109 minutes, 10 secondsto select it as the model for Cloud Code. And so now all I have to do is just smash enter. And there we go. We have a Cloud Code onboarding where it
+9:189 minutes, 18 secondsasks us, do I trust this folder? We're going to go yes. And there we have it.
+9:229 minutes, 22 secondsSo now I want to show you guys just how lightning fast this is. And what better test than to give it an entire project repository and see how fast it can
+9:319 minutes, 31 secondsactually understand it. So the project repository I'm going to be giving it is called my AI operating system skills.
+9:379 minutes, 37 secondsThis is 51 agentic workflows that is built inside of my AI operating system business that I use to set up for all of my clients. And this is pretty intense,
+9:469 minutes, 46 secondsright? So what we're going to do is we're going to copy the code. We're going to send it over to Quen and we're just going to be like, you know,
+9:539 minutes, 53 secondsinitialize this codebase and clone it and tell me the capabilities. All right,
+9:589 minutes, 58 secondsso agent ran a bash command, pulled in the repository. So if we click the drop down now, we can see 51 agent skills and
+10:0510 minutes, 5 secondsthe goal now is to see how long it takes the agents to actually tell us what's inside of the repository, what it has access to, all of the different workflows. But we could see just like
+10:1410 minutes, 14 secondshow cloud code typically performs and behaves, it's already asking me questions of like I want to, you know,
+10:2010 minutes, 20 secondstouch this folder. Am I allowed to? I want to change a little bit of this code. Am I allowed to? So Quen has a really deep understanding of how cloud
+10:2710 minutes, 27 secondscode's harness actually works. And that's why I'm recommending using Quen versus something like Gemma 4. Now Gemma 4 is really powerful, but with only 31
+10:3510 minutes, 35 secondsbillion parameters and not being trained on Cloud Code's harness, this model for free is the best one on the market,
+10:4110 minutes, 41 secondshands down. And so there we go. The agent also types really really fast,
+10:4510 minutes, 45 secondsmuch faster than any claude model. And here we could see that it went through the entire repository, cloned it, and the time that it took to actually do
+10:5210 minutes, 52 secondsthis was 59 seconds. If there's been other people that have shown you, you know, cloud code and open- sourced workflows,
+11:0111 minutes, 1 secondchances are they didn't show you a model that works this fast. And the most ironic thing is I don't even think that us as developers would have even entertained any of this if Anthropic
+11:1011 minutes, 10 secondswasn't so bad to the developers or to us using their API to actually build agentic workflows. This guys is the
+11:1811 minutes, 18 secondsgreatest hack I've seen this year. We have cloud code running for free using a ridiculously powerful 400 billion parameter model. It looks like this is
+11:2611 minutes, 26 secondsjust the beginning of the open-source tsunami.
+
