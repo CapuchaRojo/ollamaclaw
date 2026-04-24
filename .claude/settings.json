@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash:git status",
+      "Bash:git diff",
+      "Bash:git log",
+      "Bash:git add",
+      "Bash:git commit",
+      "Bash:git push",
+      "Bash:ls",
+      "Bash:pwd",
+      "Bash:cat",
+      "Bash:head",
+      "Bash:tail",
+      "Bash:find",
+      "Bash:grep",
+      "Bash:rg",
+      "Bash:ollama",
+      "Bash:claude",
+      "Bash:npm test",
+      "Bash:npm run build",
+      "Bash:python -m pytest",
+      "Bash:cargo test",
+      "Bash:go test"
+    ]
+  },
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "ollama",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_BASE_URL": "http://127.0.0.1:11434"
+  }
+}
