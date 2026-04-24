@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Ollamaclaw launcher — routes Claude Code through Ollama Cloud.
+# Usage: ollamaclaw [--model MODEL] [claude args...]
+
+MODEL="${MODEL:-qwen3.5:397b-cloud}"
+HELP_FLAG=false
+
+# Parse args
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -h|--help) HELP_FLAG=true; shift ;;
+    --model) MODEL="$2"; shift 2 ;;
+    *) break ;;
+  esac
+done
+
+if [[ "$HELP_FLAG" == "true" ]]; then
+  cat <<EOF
+Usage: ollamaclaw [--model MODEL] [claude args...]
+
+Launches Claude Code through Ollama Cloud.
+
+Options:
+  --model MODEL   Cloud model to use (default: qwen3.5:397b-cloud)
+  -h, --help      Show this help message
+
+Examples:
+  ollamaclaw
+  ollamaclaw --model qwen3.5:397b-cloud
+  ollamaclaw --help
+EOF
+  exit 0
+fi
+
+# Verify Ollama is available
+if ! command -v ollama &>/dev/null; then
+  echo "Error: ollama not found. Install Ollama first." >&2
+  exit 1
+fi
+
+# Export Ollama routing env
+export ANTHROPIC_AUTH_TOKEN=ollama
+export ANTHROPIC_API_KEY=""
+export ANTHROPIC_BASE_URL=http://127.0.0.1:11434
+
+exec claude --model "$MODEL" "$@"

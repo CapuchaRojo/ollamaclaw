@@ -62,6 +62,20 @@ Use before commits, zips, uploads, or handoff. Verify file state, remove junk on
 6. Keep secrets out of files and commits.
 7. Treat Ollamaclaw as a cloud-harness orchestration project, not a local-model-only project.
 
+## Reusable Cross-Repo Audit Agents
+
+Ollamaclaw hosts project-local subagents under `.claude/agents/` for auditing external repos.
+
+**Primary target:** VetCan (or other specified repos). Ollamaclaw is the harness, not the audit target.
+
+**Default orchestration order:**
+1. `repo-scout` — map target repo structure and surfaces
+2. Relevant domain auditor (`studio-drift-auditor`, `voice-safety-auditor`, `payment-safe-reviewer`, `medical-boundary-reviewer`)
+3. `test-commander` — run minimal relevant tests
+4. `release-scribe` — generate commit notes and client-safe summaries
+
+**Missing truth protocol:** Domain auditors report BLOCKER if canonical truth (A21/A22, voice scope, payment scope, medical boundaries) is missing from the target repo. Missing truth docs inside Ollamaclaw is expected — truth lives in target repos.
+
 ## First Task
 
 Inspect this folder, determine whether it is a Git repository, identify junk/bootstrap files, propose a clean starting structure for Ollamaclaw, and do not edit anything until Adam approves.
