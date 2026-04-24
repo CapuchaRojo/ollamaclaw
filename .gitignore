@@ -1,0 +1,38 @@
+OS / editor
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+Env / secrets
+
+.env
+.env.*
+*.key
+*.pem
+
+Node / Python common junk
+
+node_modules/
+pycache/
+*.pyc
+.venv/
+venv/
+
+Archives / build artifacts
+
+*.zip
+*.tar
+*.tar.gz
+*.tar.zst
+dist/
+build/
+
+Local logs
+
+*.log
+
+Bootstrap leftovers
+
+_bootstrap_junk/
