@@ -1,7 +1,7 @@
 ---
 name: voice-safety-auditor
 description: Audits voice/call features against preview-only posture in target repo
-type: subagent
+tools: Read, Glob, Grep, Bash
 model: inherit
 ---
 

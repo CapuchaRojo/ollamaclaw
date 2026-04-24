@@ -1,7 +1,7 @@
 ---
 name: payment-safe-reviewer
 description: Audits payment/billing/PCI claims in target repo copy and docs
-type: subagent
+tools: Read, Glob, Grep, Bash
 model: inherit
 ---
 

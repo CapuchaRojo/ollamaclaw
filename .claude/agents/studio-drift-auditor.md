@@ -1,7 +1,7 @@
 ---
 name: studio-drift-auditor
 description: Checks Studio wording against canonical A21/A22 truth in target repo
-type: subagent
+tools: Read, Glob, Grep, Bash
 model: inherit
 ---
 

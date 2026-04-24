@@ -1,7 +1,7 @@
 ---
 name: medical-boundary-reviewer
 description: Audits medical/vet/PHI boundaries in target repo copy and code
-type: subagent
+tools: Read, Glob, Grep, Bash
 model: inherit
 ---
 

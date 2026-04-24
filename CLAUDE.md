@@ -83,6 +83,19 @@ Ollamaclaw hosts project-local subagents under `.claude/agents/` for auditing ex
 
 **Missing truth protocol:** Domain auditors report BLOCKER if canonical truth (A21/A22, voice scope, payment scope, medical boundaries) is missing from the target repo. Missing truth docs inside Ollamaclaw is expected — truth lives in target repos.
 
+## Install-Stage Agent Routing
+
+For Ollamaclaw harness work (WSL, Ollama, Claude Code, launchers, agents, git):
+
+**Default order:**
+1. `scope-lock` — lock goal, target, allowed files, stop condition
+2. `env-sentinel` or `task-router` — diagnose environment or route request
+3. Relevant specialist agent (wsl-mechanic, launcher-smith, settings-warden, etc.)
+4. `git-guardian` — review changes before commit
+5. `commit-captain` — create commit message
+
+**Agent definitions:** `.claude/agents/README.md`
+
 ## First Task
 
 Inspect this folder, determine whether it is a Git repository, identify junk/bootstrap files, propose a clean starting structure for Ollamaclaw, and do not edit anything until Adam approves.

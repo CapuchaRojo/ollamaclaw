@@ -1,7 +1,7 @@
 ---
 name: test-commander
 description: Recommends and runs minimal relevant tests in target repo
-type: subagent
+tools: Read, Glob, Grep, Bash
 model: inherit
 ---
 

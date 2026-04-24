@@ -1,7 +1,7 @@
 ---
 name: repo-scout
 description: Maps target repo structure, dependencies, entry points, API/UI surfaces, and risk coupling
-type: subagent
+tools: Read, Glob, Grep, Bash
 model: inherit
 ---
 

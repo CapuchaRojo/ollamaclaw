@@ -1,7 +1,7 @@
 ---
 name: release-scribe
 description: Generates commit notes, rollback notes, and client-safe summaries
-type: subagent
+tools: Read, Glob, Grep, Bash
 model: inherit
 ---
 

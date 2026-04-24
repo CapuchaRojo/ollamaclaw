@@ -126,3 +126,79 @@ This playbook explains how Ollamaclaw's reusable subagents coordinate when audit
 2. **Target repo (e.g., VetCan) holds truth.** A21/A22 docs, voice scope, payment scope, medical boundaries live there.
 3. **Missing truth = BLOCKER.** Domain auditors do not guess. They report blocker and stop.
 4. **Never widen capability.** Prefer narrower, safer wording until truth explicitly supports wider claims.
+
+---
+
+## Ollamaclaw Install-Stage Workflows
+
+Workflows for maintaining the Ollamaclaw harness itself.
+
+### Workflow: Broken WSL/Ollama/Claude Setup
+
+**Scenario:** Commands not found, routing broken, environment confusion.
+
+| Step | Agent | Command |
+|------|-------|---------|
+| 1 | `scope-lock` | "Lock scope: diagnose broken setup" |
+| 2 | `env-sentinel` | "Check WSL, Ollama, Claude Code, Git, PATH, versions" |
+| 3 | `wsl-mechanic` | "Diagnose WSL path/shell/permission issues" |
+| 4 | `ollama-route-verifier` | "Confirm model routing is correct" |
+
+**Blocker Condition:** If critical tool is missing, stop and propose install commands.
+
+---
+
+### Workflow: Model Quota or Routing Confusion
+
+**Scenario:** Cloud quota exhausted, seeing raw tool-call JSON, unsure which model to use.
+
+| Step | Agent | Command |
+|------|-------|---------|
+| 1 | `ollama-route-verifier` | "Confirm current model route and cloud/local status" |
+| 2 | `model-route-advisor` | "Recommend cloud vs local strategy based on task and quota" |
+
+**Blocker Condition:** If cloud quota exhausted, pause cloud agent work or switch to local helper only.
+
+---
+
+### Workflow: Adding a New Subagent
+
+**Scenario:** Converting an agent idea into `.claude/agents/*.md`.
+
+| Step | Agent | Command |
+|------|-------|---------|
+| 1 | `scope-lock` | "Lock scope: add new agent with exact purpose" |
+| 2 | `agent-template-smith` | "Create agent definition with canonical frontmatter" |
+| 3 | `agent-lint-reviewer` | "Check new agent for overlap, missing boundaries, unsafe permissions" |
+| 4 | `git-guardian` | "Review staged agent files" |
+| 5 | `commit-captain` | "Create commit message for new agent" |
+
+**Blocker Condition:** If agent-lint-reviewer reports BLOCKER, fix before committing.
+
+---
+
+### Workflow: Pre-Commit Review
+
+**Scenario:** Changes ready, need to commit safely.
+
+| Step | Agent | Command |
+|------|-------|---------|
+| 1 | `scope-lock` | "Lock scope: pre-commit review" |
+| 2 | `git-guardian` | "Review git status, branch state, risky files" |
+| 3 | `commit-captain` | "Create commit plan and message" |
+
+**Blocker Condition:** If do-not-commit files detected (`.env*`, credentials), exclude before staging.
+
+---
+
+### Workflow: Zip/Source Package Audit Preparation
+
+**Scenario:** Preparing to zip or upload source package.
+
+| Step | Agent | Command |
+|------|-------|---------|
+| 1 | `scope-lock` | "Lock scope: audit before zip/upload" |
+| 2 | `git-guardian` | "Review all files, flag secrets or junk" |
+| 3 | `settings-warden` | "Check settings for dangerous permissions" |
+
+**Blocker Condition:** If secrets detected in working tree, flag before packaging.
