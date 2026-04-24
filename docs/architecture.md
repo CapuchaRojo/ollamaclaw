@@ -4,6 +4,34 @@
 
 Ollamaclaw routes Claude Code through Ollama Cloud, enabling cloud model access while using the Claude Code CLI interface.
 
+## Model Strategy
+
+### Cloud Routing (Primary)
+
+- **`qwen3.5:397b-cloud`**: Full-stack Claude Code workflows. This is the recommended path.
+
+### Local Direct Helper
+
+- **`ollama run qwen2.5-coder:14b`**: Use for direct coding questions and experimentation.
+- Not intended for Claude Code agent tool workflows.
+
+### Heavy Local Reserve
+
+- **`qwen3-coder:30b`**: Can run locally with ~16GB WSL memory + 16GB swap.
+- Too slow for practical Claude Code workflows on this machine.
+- Reserved for local experimentation when cloud is unavailable.
+
+### Usage-Limit Behavior
+
+When cloud quota is exhausted:
+1. Pause cloud agent work, OR
+2. Use local models only for direct helper tasks (`ollama run ...`), not Claude Code agent workflows.
+
+## Ollama Model Commands
+
+- **`ollama list`**: Shows installed models on disk.
+- **`ollama ps`**: Shows models currently loaded in memory.
+
 ## Request Flow
 
 ```

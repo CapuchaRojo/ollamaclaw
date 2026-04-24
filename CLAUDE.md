@@ -18,6 +18,13 @@ Operate as a careful repo mechanic first, then as an architect. Inspect before e
 - Primary launcher: `ollama launch claude --model qwen3.5:397b-cloud`.
 - Fallback launchers: `ollamaclaw-claude` or `./scripts/launch-qwen-cloud.sh`.
 
+## Model Fallback Guidance
+
+- Use cloud mode (`qwen3.5:397b-cloud`) for full-stack Claude Code work when available.
+- Do not assume local models can safely drive Claude Code tools—testing showed raw tool-call JSON leakage.
+- Treat local model fallback as experimental unless a model passes a smoke test without leaking tool-call JSON.
+- Local models (`ollama run qwen2.5-coder:14b`) may be used for direct coding help, not Claude Code agent workflows.
+
 ## Session Startup Checklist
 
 At the start of each session, inspect:

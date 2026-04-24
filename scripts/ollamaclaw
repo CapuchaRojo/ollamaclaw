@@ -22,6 +22,9 @@ Usage: ollamaclaw [--model MODEL] [claude args...]
 
 Launches Claude Code through Ollama Cloud.
 
+Cloud mode (recommended):
+  Uses qwen3.5:397b-cloud for full-stack Claude Code workflows.
+
 Options:
   --model MODEL   Cloud model to use (default: qwen3.5:397b-cloud)
   -h, --help      Show this help message
@@ -30,6 +33,10 @@ Examples:
   ollamaclaw
   ollamaclaw --model qwen3.5:397b-cloud
   ollamaclaw --help
+
+Note: Local model fallback is experimental. Cloud mode is the recommended
+full-stack Claude Code path. Local models may be used via 'ollama run'
+for direct coding help, not Claude Code agent workflows.
 EOF
   exit 0
 fi
