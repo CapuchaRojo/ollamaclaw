@@ -1,27 +1,23 @@
-OS / editor
-
+# OS / editor
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 
-Env / secrets
-
+# Env / secrets
 .env
 .env.*
 *.key
 *.pem
 
-Node / Python common junk
-
+# Node / Python common junk
 node_modules/
-pycache/
+__pycache__/
 *.pyc
 .venv/
 venv/
 
-Archives / build artifacts
-
+# Archives / build artifacts
 *.zip
 *.tar
 *.tar.gz
@@ -29,10 +25,8 @@ Archives / build artifacts
 dist/
 build/
 
-Local logs
-
+# Local logs
 *.log
 
-Bootstrap leftovers
-
+# Bootstrap leftovers
 _bootstrap_junk/
