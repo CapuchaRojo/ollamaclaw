@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(ollama list *)",
-      "Bash(ollama ps *)",
-      "Bash(./scripts/check-env.sh *)"
-    ]
-  }
-}

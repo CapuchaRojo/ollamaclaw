@@ -96,6 +96,12 @@ For Ollamaclaw harness work (WSL, Ollama, Claude Code, launchers, agents, git):
 
 **Agent definitions:** `.claude/agents/README.md`
 
+**Package/ZIP audit order:**
+1. `scope-lock` — lock package purpose and expected contents
+2. `zip-auditor` — inspect archive contents without extracting into the live repo
+3. `git-guardian` — review source tree and staging risk
+4. `commit-captain` — create commit/package note if needed
+
 ## First Task
 
 Inspect this folder, determine whether it is a Git repository, identify junk/bootstrap files, propose a clean starting structure for Ollamaclaw, and do not edit anything until Adam approves.

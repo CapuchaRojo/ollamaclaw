@@ -47,6 +47,13 @@ if ! command -v ollama &>/dev/null; then
   exit 1
 fi
 
+# Verify Claude Code is available
+if ! command -v claude &>/dev/null; then
+  echo "Error: claude not found. Install Claude Code or add it to PATH." >&2
+  echo "Expected WSL install path is usually: $HOME/.local/bin/claude" >&2
+  exit 1
+fi
+
 # Export Ollama routing env
 export ANTHROPIC_AUTH_TOKEN=ollama
 export ANTHROPIC_API_KEY=""

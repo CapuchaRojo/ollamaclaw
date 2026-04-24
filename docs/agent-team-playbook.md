@@ -193,12 +193,13 @@ Workflows for maintaining the Ollamaclaw harness itself.
 
 ### Workflow: Zip/Source Package Audit Preparation
 
-**Scenario:** Preparing to zip or upload source package.
+**Scenario:** Preparing to zip, upload, or trust a source package/manual patch.
 
 | Step | Agent | Command |
 |------|-------|---------|
 | 1 | `scope-lock` | "Lock scope: audit before zip/upload" |
-| 2 | `git-guardian` | "Review all files, flag secrets or junk" |
-| 3 | `settings-warden` | "Check settings for dangerous permissions" |
+| 2 | `zip-auditor` | "Audit the ZIP/package against expected files and safety rules" |
+| 3 | `git-guardian` | "Review working tree, ignored files, and staging risk" |
+| 4 | `settings-warden` | "Check settings for dangerous permissions or local config leakage" |
 
-**Blocker Condition:** If secrets detected in working tree, flag before packaging.
+**Blocker Condition:** If secrets, `.claude/settings.local.json`, `.env*`, nested junk archives, or missing required files are detected, flag before packaging.

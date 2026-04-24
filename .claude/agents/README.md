@@ -26,6 +26,7 @@ Agents for maintaining the Ollamaclaw harness itself: WSL, Ollama routing, Claud
 | [`commit-captain`](commit-captain.md) | Creates clean commit plans and commit messages after validation | Changes ready, user asks for commit message, multiple slices need separate commits |
 | [`agent-template-smith`](agent-template-smith.md) | Creates consistent subagent Markdown definitions using Ollamaclaw approved style | Adding new subagent, converting idea into `.claude/agents/*.md`, normalizing frontmatter |
 | [`agent-lint-reviewer`](agent-lint-reviewer.md) | Checks agents for overlap, vague scope, unsupported frontmatter, missing boundaries, unsafe tool permissions | After adding agents, before committing `.claude/agents/`, when agents seem redundant |
+| [`zip-auditor`](zip-auditor.md) | Audits source and patch ZIPs for expected files, secrets, junk, and package safety | Before uploading source zips, applying manual patches, or trusting a shared archive |
 
 ---
 
@@ -80,7 +81,7 @@ git-guardian → commit-captain
 ### Zip/Source Package Audit Preparation
 
 ```
-scope-lock → git-guardian → (auditor agents as needed)
+scope-lock → zip-auditor → git-guardian → (auditor agents as needed)
 ```
 
 ---

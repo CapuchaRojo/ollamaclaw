@@ -30,3 +30,6 @@ build/
 
 # Bootstrap leftovers
 _bootstrap_junk/
+
+# Claude Code local/session config
+.claude/settings.local.json
