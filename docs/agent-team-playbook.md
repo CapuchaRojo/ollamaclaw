@@ -143,20 +143,29 @@ Workflows for maintaining the Ollamaclaw harness itself.
 
 This validates project structure, agent integrity, settings safety, tooling, script executability, and documentation presence. Fix any FAIL items before proceeding to specialist agents.
 
+**If tooling failures occur** (missing zip, zstd, curl, etc.):
+
+```bash
+./scripts/toolchain-doctor.sh   # Diagnose missing tools
+```
+
+Install missing tools manually, then re-run doctor.
+
 ---
 
 ### Workflow: Broken WSL/Ollama/Claude Setup
 
 **Scenario:** Commands not found, routing broken, environment confusion.
 
-| Step | Agent | Command |
-|------|-------|---------|
+| Step | Agent / Script | Command |
+|------|----------------|---------|
 | 1 | `scope-lock` | "Lock scope: diagnose broken setup" |
-| 2 | `env-sentinel` | "Check WSL, Ollama, Claude Code, Git, PATH, versions" |
-| 3 | `wsl-mechanic` | "Diagnose WSL path/shell/permission issues" |
-| 4 | `ollama-route-verifier` | "Confirm model routing is correct" |
+| 2 | `toolchain-doctor.sh` | `./scripts/toolchain-doctor.sh` |
+| 3 | `env-sentinel` | "Check WSL, Ollama, Claude Code, Git, PATH, versions" |
+| 4 | `wsl-mechanic` | "Diagnose WSL path/shell/permission issues" |
+| 5 | `ollama-route-verifier` | "Confirm model routing is correct" |
 
-**Blocker Condition:** If critical tool is missing, stop and propose install commands.
+**Blocker Condition:** If critical tool is missing, `toolchain-doctor.sh` prints manual install commands. Do not auto-install.
 
 ---
 

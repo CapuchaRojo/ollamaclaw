@@ -27,6 +27,14 @@ The `ollamaclaw-doctor.sh` script performs a fast, non-destructive health check 
 - Prints `ollama list` output
 - Prints `ollama ps` output
 
+For full toolchain prerequisite checks (zip, zstd, curl, etc.), use:
+
+```bash
+./scripts/toolchain-doctor.sh
+```
+
+See [Toolchain Bootstrap Workflow](./toolchain-bootstrap-workflow.md) for details.
+
 ### E. Script Executability
 Confirms these scripts are executable:
 - `scripts/check-env.sh`

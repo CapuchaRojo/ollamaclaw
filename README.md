@@ -64,6 +64,16 @@ Run the Ollamaclaw health check before cloud work, after patches, before commit,
 
 See [docs/doctor-workflow.md](./docs/doctor-workflow.md) for details.
 
+## Toolchain / Prerequisites
+
+Check for missing WSL tools and print safe manual install guidance:
+
+```bash
+./scripts/toolchain-doctor.sh
+```
+
+See [docs/toolchain-bootstrap-workflow.md](./docs/toolchain-bootstrap-workflow.md) for details.
+
 ## Source Truth Checks
 
 Verify docs, scripts, and agents are consistent:

@@ -135,3 +135,7 @@ For Ollamaclaw harness work (WSL, Ollama, Claude Code, launchers, agents, git):
 ## First Task
 
 Inspect this folder, determine whether it is a Git repository, identify junk/bootstrap files, propose a clean starting structure for Ollamaclaw, and do not edit anything until Adam approves.
+
+## Toolchain Rule
+
+- Do not run sudo/install commands automatically. Use `./scripts/toolchain-doctor.sh` to print manual install guidance.

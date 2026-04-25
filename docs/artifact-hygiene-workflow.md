@@ -135,6 +135,22 @@ Root-level ZIP files (e.g., `ollamaclaw.zip` at project root) are warning signs 
 
 **Exception**: Intentional release ZIPs kept outside the repo for client handoff.
 
+## zip Utility Required
+
+The `zip` utility is required for `package-ollamaclaw.sh` to function. If packaging fails:
+
+```bash
+./scripts/toolchain-doctor.sh   # Diagnose missing zip
+```
+
+Install manually if missing:
+
+```bash
+sudo apt-get install -y zip
+```
+
+See [Toolchain Bootstrap Workflow](./toolchain-bootstrap-workflow.md) for full details.
+
 ## Why `_bootstrap_junk` Is Excluded
 
 The `_bootstrap_junk/` directory contains:

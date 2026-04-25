@@ -27,6 +27,8 @@ Reviews package managers, lockfiles, runtime dependencies, and missing installs.
   - Git availability.
   - Common utilities: `unzip`, `curl`, `zstd`, `bash`.
 
+**Ollamaclaw Note:** For toolchain prerequisite checks, prefer `./scripts/toolchain-doctor.sh` before proposing dependency/install doc changes. The toolchain doctor prints safe manual install commands without auto-executing sudo.
+
 ## Output
 
 - dependency surfaces inspected

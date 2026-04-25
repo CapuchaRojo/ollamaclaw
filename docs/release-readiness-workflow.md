@@ -59,6 +59,14 @@ Run `artifact-hygiene-check.sh` before creating any ZIP for upload. It checks fo
 - Tracked secrets (FAIL if found)
 - Package script availability
 
+**If packaging fails due to missing tools:**
+
+```bash
+./scripts/toolchain-doctor.sh   # Diagnose missing zip, zstd, etc.
+```
+
+Install missing tools manually, then re-run `package-ollamaclaw.sh`.
+
 Use `package-ollamaclaw.sh` to create upload packages safely. Output goes to `.ollamaclaw/artifacts/` (git-ignored).
 
 ## How release-scribe and zip-auditor Fit
