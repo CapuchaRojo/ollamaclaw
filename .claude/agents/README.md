@@ -61,6 +61,12 @@ Agents that prevent documentation drift and docs-to-code desynchronization.
 |-------|---------|----------------|
 | [`source-truth-librarian`](source-truth-librarian.md) | Audits docs, scripts, README, CLAUDE.md, and commands for contradictions and stale claims | After editing multiple docs, before releases, when docs seem contradictory |
 | [`docs-to-code-syncer`](docs-to-code-syncer.md) | Checks that documented commands and workflows match implemented scripts and agents | After adding/removing scripts, before doc releases, when "this command doesn't work" |
+| [`script-hardener`](script-hardener.md) | Reviews Bash scripts for safe flags, clear errors, portability, non-destructive behavior | After writing/editing scripts, before commits, when scripts seem unsafe or unclear |
+| [`dependency-scout`](dependency-scout.md) | Reviews dependencies, package managers, lockfiles, install assumptions, runtime requirements | After adding dependencies, when install docs seem incomplete, before release audits |
+| [`security-sweeper`](security-sweeper.md) | Searches for secrets, unsafe tokens, exposed credentials, dangerous commands, permission risks | Before commits, before zips, after adding config files, when security audit needed |
+| [`license-warden`](license-warden.md) | Reviews license compatibility, reference-only boundaries, attribution, open-source obligations | Before releases, when adding third-party code, when reference docs are touched |
+| [`rollback-planner`](rollback-planner.md) | Creates rollback plans for patches, refactors, releases, worktrees, manual zip/package changes | Before risky edits, before releases, when worktree cleanup needed |
+| [`patch-planner`](patch-planner.md) | Plans minimal safe patches before edits, including exact files, risks, validation, rollback, commit message | Before any non-trivial edit, when scope seems broad, when worktree plan needed |
 
 **Automated check:** Run `./scripts/source-truth-check.sh` for fast pattern-based validation before invoking these agents.
 

@@ -110,6 +110,8 @@ Ollamaclaw includes a governance layer to safely scale its subagent library with
 - [Agent Governance](./docs/agent-governance.md) — Rules, standards, and workflows for agent management
 - `./scripts/agent-inventory.sh` — Fast frontmatter validation
 
+**Repo Hygiene Agents:** Ollamaclaw includes Batch 2 repo hygiene agents (`script-hardener`, `dependency-scout`, `security-sweeper`, `license-warden`, `rollback-planner`, `patch-planner`) to keep scripts, docs, dependencies, security, license, rollback, and patch plans aligned.
+
 ## Reference Roadmap
 
 Strategic docs based on Claw Code reference analysis:

@@ -239,6 +239,29 @@ This validates project structure, agent integrity, settings safety, tooling, scr
 
 ---
 
+### Workflow: Repo Hygiene
+
+**Scenario:** Making changes to scripts, dependencies, docs, or preparing a release with full hygiene audit.
+
+| Step | Agent / Script | Command |
+|------|----------------|---------|
+| 1 | `scope-lock` | "Lock scope: repo hygiene audit" |
+| 2 | `patch-planner` | "Plan minimal safe hygiene changes" |
+| 3 | `source-truth-librarian` | "Verify docs, scripts, agents are consistent" |
+| 4 | `docs-to-code-syncer` | "Verify documented commands match implemented scripts" |
+| 5 | `script-hardener` | "Review scripts for safety, portability, clear errors" (if scripts touched) |
+| 6 | `dependency-scout` | "Review dependencies, lockfiles, install docs" (if dependencies/install docs touched) |
+| 7 | `security-sweeper` | "Search for secrets, unsafe commands, permission risks" |
+| 8 | `license-warden` | "Review license, attribution, reference-only boundaries" (if reference/license docs touched) |
+| 9 | `rollback-planner` | "Create rollback plan for all changes" |
+| 10 | `git-guardian` | "Review all staged changes for release safety" |
+| 11 | `./scripts/release-readiness.sh` | Run release readiness check |
+| 12 | `commit-captain` | "Create commit message" |
+
+**Blocker Condition:** If any agent reports BLOCKER (secrets found, unsafe scripts, license risk, missing rollback), fix before committing.
+
+---
+
 ### Workflow: Release Readiness
 
 **Scenario:** Preparing to commit, push, zip, upload, or hand off a release.

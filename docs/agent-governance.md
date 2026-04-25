@@ -53,11 +53,13 @@ model: inherit
 Agents are grouped into categories in `.claude/agents/README.md`:
 
 1. **Harness / Install Agents** — WSL, Ollama, Claude Code, launchers, settings
-2. **Repo Hygiene / Source Truth Agents** — docs-to-code sync, source-truth checks
+2. **Repo Hygiene / Source Truth Agents** — docs-to-code sync, source-truth checks, script hardening, dependency scanning, security sweeping, license review, rollback planning, patch planning
 3. **Cross-Repo Audit Agents** — VetCan auditors (studio, voice, payment, medical)
 4. **Validation / Release Agents** — test-commander, release-scribe, git-guardian
 5. **Package / Reference Agents** — zip-auditor, reference analysis
 6. **Personal / Business / Future Agents** — only if they exist
+
+**Batch 2 Note:** The recommended first expansion after governance is the Batch 2 Repo Hygiene agent pack: `script-hardener`, `dependency-scout`, `security-sweeper`, `license-warden`, `rollback-planner`, `patch-planner`.
 
 ---
 
@@ -186,3 +188,18 @@ Before creating new agents or modifying existing ones:
 5. Getting explicit user approval for the agent catalog plan
 
 This prevents README drift, playbook drift, and agent boundary confusion.
+
+---
+
+## Rule: Repo Hygiene Agents Must Be Audit-First
+
+**New repo hygiene agents must remain audit-first and mutation-averse.**
+
+Repo hygiene agents (`script-hardener`, `dependency-scout`, `security-sweeper`, `license-warden`, `rollback-planner`, `patch-planner`) follow a strict audit-first discipline:
+
+- They inspect and report, not edit.
+- They propose exact fixes, not apply them.
+- They require explicit user approval before any mutation.
+- They flag blockers, not warnings, when safety is in question.
+
+This prevents accidental destructive changes during hygiene audits.
