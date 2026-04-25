@@ -101,7 +101,7 @@ Evaluate local models before using with Claude Code:
 - [Model Smoke Tests](./docs/model-smoke-tests.md) — Test procedure and recorded results
 - `./scripts/model-smoke-test.sh <model>` — Run smoke-test checklist
 - [JSON Leak Detection](./docs/json-leak-detection.md) — Detect raw tool-call JSON leakage
-- `./scripts/json-leak-detector.sh <file>` — Scan saved output for leaks
+- `./scripts/json-leak-detector.sh <file>` — Scan saved output for raw tool-call JSON (exit 0=PASS, 1=FAIL)
 
 ## Agent Governance
 

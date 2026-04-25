@@ -53,7 +53,7 @@ To detect this issue in saved output, use the JSON leak detector:
 ./scripts/json-leak-detector.sh <path-to-output.txt>
 ```
 
-See [JSON Leak Detection](./json-leak-detection.md) for full details.
+See [JSON Leak Detection](./json-leak-detection.md) for full details. Raw JSON tool-call output is a **Claude Code compatibility failure** — the model is printing tool invocations as text rather than executing them through the agent protocol.
 
 ### Observed Behavior
 

@@ -54,14 +54,20 @@ Confirms these docs exist:
 - Prints the latest session log file if present
 - Does NOT modify session logs
 
-### H. JSON Leak Detection (Optional)
-The doctor does NOT automatically run JSON leak detection. This is an optional diagnostic you can run manually when testing models:
+### H. JSON Leak Detection (Optional Diagnostic)
+The doctor does NOT automatically run JSON leak detection. This is an optional diagnostic for model smoke testing:
 
 ```bash
 ./scripts/json-leak-detector.sh <path-to-output.txt>
 ```
 
-See [JSON Leak Detection](./json-leak-detection.md) for details on when and how to use this diagnostic.
+**When to use:** After running Claude Code with a local model and saving output to a file.
+
+**What it detects:** Raw tool-call JSON patterns like `"name": "Read"`, `"arguments": {` that indicate the model printed tool invocations as text instead of executing them.
+
+**Results:** PASS (exit 0) means no leak patterns detected; FAIL (exit 1) means raw JSON detected.
+
+See [JSON Leak Detection](./json-leak-detection.md) for full details and false positive limitations.
 
 ### I. Agent Inventory (Optional)
 The doctor does NOT automatically run agent inventory. This is an optional diagnostic you can run manually when adding or auditing agents:

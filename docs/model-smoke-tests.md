@@ -28,7 +28,20 @@ For automated scanning of Claude Code output, use:
 ./scripts/json-leak-detector.sh <path-to-output.txt>
 ```
 
-See [JSON Leak Detection](./json-leak-detection.md) for usage details and pattern explanations.
+**Usage:**
+```bash
+# Scan a file
+./scripts/json-leak-detector.sh /tmp/claude-output.txt
+
+# Or pipe from stdin
+cat /tmp/claude-output.txt | ./scripts/json-leak-detector.sh -
+```
+
+**Results:**
+- **PASS** (exit 0) - No raw tool-call JSON patterns detected
+- **FAIL** (exit 1) - Raw tool-call JSON detected
+
+See [JSON Leak Detection](./json-leak-detection.md) for full details, false positive limitations, and how to log outcomes.
 
 ## What Is JSON Leakage?
 
