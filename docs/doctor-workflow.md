@@ -97,7 +97,19 @@ This wrapper runs:
 
 See [Release Readiness Workflow](./release-readiness-workflow.md) for details.
 
-### K. Parallel Safety Check (Optional Diagnostic)
+### K. Slice Queue (Optional Diagnostic)
+
+The slice queue provides project-local planning for upcoming work:
+
+```bash
+./scripts/slice-queue.sh list
+./scripts/slice-queue.sh add <slice-name> "<goal>"
+./scripts/slice-queue.sh next
+```
+
+See [Slice Queue Workflow](./slice-queue-workflow.md) for details.
+
+### L. Parallel Safety Check (Optional Diagnostic)
 
 Before using multiple terminals or worktrees, run the parallel safety check:
 
@@ -117,8 +129,6 @@ For worktree planning and creation:
 See [Parallel Slice Workflow](./parallel-slice-workflow.md) and [Worktree Slice Workflow](./worktree-slice-workflow.md) for the full protocol.
 
 ---
-
-## When to Run the Doctor
 
 ```bash
 ./scripts/release-readiness.sh

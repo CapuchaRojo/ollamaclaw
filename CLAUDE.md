@@ -114,6 +114,12 @@ For Ollamaclaw harness work (WSL, Ollama, Claude Code, launchers, agents, git):
 
 **Prefer queued prompts for same-file work.** Worktrees are for non-overlapping file scopes only.
 
+## Slice Queue Rule
+
+**Before proposing multiple future tasks:** Add them to or compare them against the slice queue (`./scripts/slice-queue.sh list`).
+
+**Work one active slice at a time** unless a worktree plan exists for parallel-safe non-overlapping work.
+
 ## First Task
 
 Inspect this folder, determine whether it is a Git repository, identify junk/bootstrap files, propose a clean starting structure for Ollamaclaw, and do not edit anything until Adam approves.

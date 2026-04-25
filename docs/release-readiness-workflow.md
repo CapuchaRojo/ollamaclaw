@@ -171,6 +171,17 @@ RESULT: FAIL - Hard release blockers detected. Fix before proceeding.
 10. git push (after all checks pass)
 ```
 
+## Marking a Slice Done
+
+After release-readiness passes and the commit is complete:
+
+```bash
+./scripts/slice-queue.sh status <slice-name> done
+./scripts/session-log.sh "Completed slice: <slice-name> - <description>"
+```
+
+The slice queue tracks the completion; session log captures what was done.
+
 ## Parallel Branches / Worktrees
 
 When working on parallel slices with separate branches or worktrees:

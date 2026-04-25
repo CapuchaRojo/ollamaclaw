@@ -257,6 +257,25 @@ This validates project structure, agent integrity, settings safety, tooling, scr
 
 ---
 
+### Workflow: Slice Queue Workflow
+
+**Scenario:** Planning and tracking slices before implementation.
+
+| Step | Agent / Script | Command |
+|------|----------------|---------|
+| 1 | `scope-lock` | "Lock scope: define slice goal" |
+| 2 | `slice-queue.sh list` | `./scripts/slice-queue.sh list` |
+| 3 | `slice-queue.sh add/show/next` | `./scripts/slice-queue.sh add <name> "<goal>"` |
+| 4 | `slice-planner` | Plan slice scope and validation |
+| 5 | `worktree-slice.sh plan` (if parallel-safe) | `./scripts/worktree-slice.sh plan <slice-name>` |
+| 6 | `git-guardian` | "Review changes" |
+| 7 | `release-readiness.sh` | `./scripts/release-readiness.sh` |
+| 8 | `commit-captain` | "Create commit message" |
+
+**Note:** The slice queue tracks intent; Git tracks actual code. Add slices before starting work.
+
+---
+
 ### Workflow: Parallel Slice Workflow
 
 **Scenario:** Implementing multiple independent slices simultaneously using multiple terminals or worktrees.
@@ -264,13 +283,14 @@ This validates project structure, agent integrity, settings safety, tooling, scr
 | Step | Agent / Script | Command |
 |------|----------------|---------|
 | 1 | `scope-lock` | "Lock scope: define slice names and file scopes" |
-| 2 | `parallel-safety-check.sh` | `./scripts/parallel-safety-check.sh` |
-| 3 | `task-router` | "Route each slice to appropriate agent chain" |
-| 4 | (Implement) | Parallel work on separate branches/worktrees |
-| 5 | `git-guardian` | "Review changes from each branch before merge" |
-| 6 | `release-readiness.sh` | `./scripts/release-readiness.sh` (each branch) |
-| 7 | `release-readiness.sh` | `./scripts/release-readiness.sh` (after merge) |
-| 8 | `commit-captain` | "Create commit message for merged changes" |
+| 2 | `slice-queue.sh add` | Add each slice to queue: `./scripts/slice-queue.sh add <name> "<goal>"` |
+| 3 | `parallel-safety-check.sh` | `./scripts/parallel-safety-check.sh` |
+| 4 | `task-router` | "Route each slice to appropriate agent chain" |
+| 5 | (Implement) | Parallel work on separate branches/worktrees |
+| 6 | `git-guardian` | "Review changes from each branch before merge" |
+| 7 | `release-readiness.sh` | `./scripts/release-readiness.sh` (each branch) |
+| 8 | `release-readiness.sh` | `./scripts/release-readiness.sh` (after merge) |
+| 9 | `commit-captain` | "Create commit message for merged changes" |
 
 **Blocker Condition:** If `parallel-safety-check.sh` reports high-conflict file conflicts, use sequential work instead. If `release-readiness.sh` reports FAIL on any branch, fix before merge.
 
@@ -285,15 +305,17 @@ This validates project structure, agent integrity, settings safety, tooling, scr
 | Step | Agent / Script | Command |
 |------|----------------|---------|
 | 1 | `scope-lock` | "Lock scope: define slice goal, file scope, branch name" |
-| 2 | `worktree-slice.sh plan` | `./scripts/worktree-slice.sh plan <slice-name>` |
-| 3 | `parallel-safety-check.sh` | `./scripts/parallel-safety-check.sh` |
-| 4 | `task-router` | "Route slice to appropriate agent chain" |
-| 5 | `worktree-slice.sh create` | `./scripts/worktree-slice.sh create <slice-name>` |
-| 6 | (Implement) | Work in the new worktree |
-| 7 | `release-readiness.sh` | `./scripts/release-readiness.sh` (in worktree) |
-| 8 | `git-guardian` | "Review changes before merge" |
-| 9 | `release-readiness.sh` | `./scripts/release-readiness.sh` (after merge) |
-| 10 | `commit-captain` | "Create commit message" |
+| 2 | `slice-queue.sh add` | `./scripts/slice-queue.sh add <slice-name> "<goal>"` |
+| 3 | `worktree-slice.sh plan` | `./scripts/worktree-slice.sh plan <slice-name>` |
+| 4 | `parallel-safety-check.sh` | `./scripts/parallel-safety-check.sh` |
+| 5 | `task-router` | "Route slice to appropriate agent chain" |
+| 6 | `worktree-slice.sh create` | `./scripts/worktree-slice.sh create <slice-name>` |
+| 7 | (Implement) | Work in the new worktree |
+| 8 | `release-readiness.sh` | `./scripts/release-readiness.sh` (in worktree) |
+| 9 | `git-guardian` | "Review changes before merge" |
+| 10 | `release-readiness.sh` | `./scripts/release-readiness.sh` (after merge) |
+| 11 | `commit-captain` | "Create commit message" |
+| 12 | `slice-queue.sh status` | `./scripts/slice-queue.sh status <slice-name> done` |
 
 **Blocker Condition:** If `parallel-safety-check.sh` reports FAIL, do not create the worktree. If `release-readiness.sh` reports FAIL in the worktree, fix before merge.
 

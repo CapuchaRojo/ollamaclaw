@@ -56,15 +56,16 @@ Multiple terminals are appropriate when:
 For true parallel implementation work:
 
 ```
-1. scope-lock          — Lock slice goal, file scope, branch name
-2. worktree-slice.sh plan — Plan the worktree (see docs/worktree-slice-workflow.md)
-3. parallel-safety-check.sh — Verify boundaries before create
-4. worktree-slice.sh create — Create isolated worktree
-5. Implement           — Non-overlapping files only
-6. parallel-safety-check.sh — Verify boundaries before merge
-7. git-guardian        — Review changes
-8. release-readiness   — Pass before merge
-9. Merge to main       — One slice at a time
+1. Add slices to queue — Track intent (see docs/slice-queue-workflow.md)
+2. scope-lock          — Lock slice goal, file scope, branch name
+3. worktree-slice.sh plan — Plan the worktree (see docs/worktree-slice-workflow.md)
+4. parallel-safety-check.sh — Verify boundaries before create
+5. worktree-slice.sh create — Create isolated worktree
+6. Implement           — Non-overlapping files only
+7. parallel-safety-check.sh — Verify boundaries before merge
+8. git-guardian        — Review changes
+9. release-readiness   — Pass before merge
+10. Merge to main      — One slice at a time
 ```
 
 Use `./scripts/worktree-slice.sh` for safe worktree management. See [Worktree Slice Workflow](./worktree-slice-workflow.md) for details.
@@ -120,6 +121,17 @@ This setup provides:
 - Fast validation loop
 - No quota waste from parallel cloud calls
 - No risk of conflicting edits
+
+## Slice Queue as Planning Layer
+
+Before planning parallel work, add slices to the queue:
+
+```bash
+./scripts/slice-queue.sh add <slice-name> "<goal>"
+./scripts/slice-queue.sh list
+```
+
+The queue tracks intent; worktrees provide isolation. See [Slice Queue Workflow](./slice-queue-workflow.md) for details.
 
 ## Pre-Flight Check
 

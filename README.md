@@ -148,3 +148,14 @@ For true parallel implementation with isolated worktrees:
 
 See [docs/worktree-slice-workflow.md](./docs/worktree-slice-workflow.md) for the full protocol.
 
+## Slice Queue
+
+Track planned work slices before starting implementation:
+
+```bash
+./scripts/slice-queue.sh list
+./scripts/slice-queue.sh add <slice-name> "Goal"
+```
+
+See [docs/slice-queue-workflow.md](./docs/slice-queue-workflow.md) for details.
+

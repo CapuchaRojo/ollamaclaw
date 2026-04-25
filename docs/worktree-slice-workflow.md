@@ -24,6 +24,12 @@ This document complements [Parallel Slice Workflow](./parallel-slice-workflow.md
 
 Use a worktree when:
 
+- Slices are tracked in the slice queue
+- Implementing **non-overlapping features** in parallel
+- Each slice has its **own branch** and **separate file scope**
+- You need **true isolation** (separate VS Code windows, separate Claude Code sessions)
+- Cloud quota can support parallel consumption
+
 - Implementing **non-overlapping features** in parallel
 - Each slice has its **own branch** and **separate file scope**
 - You need **true isolation** (separate VS Code windows, separate Claude Code sessions)
@@ -40,10 +46,26 @@ Do NOT create a worktree when:
 
 **Recommended default:** One writer terminal + one WSL validation terminal.
 
+## Slice Queue as Source of Slices
+
+Before planning a worktree, add the slice to the queue:
+
+```bash
+./scripts/slice-queue.sh add <slice-name> "<goal>"
+./scripts/slice-queue.sh next
+```
+
+The queue provides the slice name and goal; worktree-slice handles git isolation.
+
+See [Slice Queue Workflow](./slice-queue-workflow.md) for details.
+
 ## The Safe Sequence
 
 ```
-1. Plan the slice
+1. Add slice to queue (if not already tracked)
+   ./scripts/slice-queue.sh add <slice-name> "<goal>"
+
+2. Plan the slice
    ./scripts/worktree-slice.sh plan <slice-name>
 
 2. Run parallel safety check

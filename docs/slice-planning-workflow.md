@@ -8,6 +8,19 @@ Plan and execute focused slices of work in Ollamaclaw. A slice is a unit of work
 - Touches a bounded set of files
 - Can be completed and reviewed independently
 
+## Slice Queue as Planning Layer
+
+Before planning a slice, add it to the slice queue:
+
+```bash
+./scripts/slice-queue.sh add <slice-name> "<goal>"
+./scripts/slice-queue.sh next
+```
+
+The slice queue tracks intent between the roadmap (strategic lanes) and implementation (worktrees/commits).
+
+See [Slice Queue Workflow](./slice-queue-workflow.md) for details.
+
 ## Default: One Slice at a Time
 
 **Recommended approach:** Complete one slice before starting the next.
@@ -31,7 +44,13 @@ See [Parallel Slice Workflow](./parallel-slice-workflow.md) for the full protoco
 
 ## Slice Planning Steps
 
-### 1. Define the Slice
+### 1. Add to Slice Queue (If Not Already Tracked)
+
+```bash
+./scripts/slice-queue.sh add <slice-name> "<goal>"
+```
+
+### 2. Define the Slice
 
 Use `scope-lock` to articulate:
 
@@ -40,7 +59,7 @@ Use `scope-lock` to articulate:
 - Validation: How will we know it is done?
 - Stop condition: What is out of scope?
 
-### 2. Check Parallel Safety (If Applicable)
+### 3. Check Parallel Safety (If Applicable)
 
 If considering parallel work, run:
 
@@ -66,11 +85,11 @@ This script verifies:
 
 See [Worktree Slice Workflow](./worktree-slice-workflow.md) for the full protocol.
 
-### 3. Route the Task
+### 4. Route the Task
 
 Use `task-router` to select the appropriate agent chain for the slice type.
 
-### 4. Implement
+### 5. Implement
 
 Work on the slice using one of these approaches:
 
@@ -81,7 +100,7 @@ Work on the slice using one of these approaches:
 | Read-only second terminal | Audit while implementing |
 | Separate worktree | True parallel implementation |
 
-### 5. Validate
+### 6. Validate
 
 Before marking the slice complete:
 
@@ -90,7 +109,7 @@ Before marking the slice complete:
 - Run `agent-inventory.sh` (if touching agents)
 - Run relevant tests via `test-commander`
 
-### 6. Review and Commit
+### 7. Review and Commit
 
 - Run `git-guardian` to review changes
 - Run `release-readiness.sh` before commit
@@ -169,6 +188,7 @@ Benefits:
 - Use `/clear` to reset context
 - Or launch fresh `ollama launch claude --model qwen3.5:397b-cloud`
 - Run startup checklist again
+- Update slice queue: `./scripts/slice-queue.sh status <slice-name> done`
 
 ## Rollback Plan
 
