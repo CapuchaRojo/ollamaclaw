@@ -45,6 +45,22 @@ This script runs all checks and reports PASS / WARN / FAIL.
 ./scripts/agent-inventory.sh      # Agent frontmatter validation
 ```
 
+### Artifact Hygiene (Before ZIP/Upload)
+
+```bash
+./scripts/artifact-hygiene-check.sh   # Check for clutter and packaging risk
+./scripts/package-ollamaclaw.sh       # Create safe source package
+```
+
+Run `artifact-hygiene-check.sh` before creating any ZIP for upload. It checks for:
+- Root-level ZIP files
+- Bootstrap junk
+- Nested archives
+- Tracked secrets (FAIL if found)
+- Package script availability
+
+Use `package-ollamaclaw.sh` to create upload packages safely. Output goes to `.ollamaclaw/artifacts/` (git-ignored).
+
 ## How release-scribe and zip-auditor Fit
 
 ### release-scribe

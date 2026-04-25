@@ -101,6 +101,7 @@ git commit -m "Add zip audit workflow"
 
 Final confirmation before packaging or handoff:
 
+- [ ] `./scripts/artifact-hygiene-check.sh` reports PASS (or acceptable WARNs)
 - [ ] `./scripts/release-readiness.sh` reports PASS (or acceptable WARNs)
 - [ ] `./scripts/ollamaclaw-doctor.sh` reports no FAIL items
 - [ ] `./scripts/source-truth-check.sh` reports no FAIL items
@@ -110,3 +111,34 @@ Final confirmation before packaging or handoff:
 - [ ] No nested ZIP files unless intentional
 - [ ] No `_bootstrap_junk/` or build/cache folders
 - [ ] `zip-auditor` agent reports PASS or PASS WITH NOTES
+
+## 8. Creating the Package
+
+**Use the package script instead of manual ZIP creation:**
+
+```bash
+./scripts/package-ollamaclaw.sh [filename.zip]
+```
+
+This creates a safe source package with proper exclusions:
+- Secrets and local settings excluded
+- Git internals excluded
+- Bootstrap junk excluded
+- Nested archives excluded
+- Output goes to `.ollamaclaw/artifacts/` (git-ignored)
+
+**Do not** create root-level ZIPs manually. Use `./scripts/package-ollamaclaw.sh` for all upload packages.
+
+## 9. After Packaging
+
+1. Run `zip-auditor` to audit the package:
+   ```bash
+   claude "Audit this package: .ollamaclaw/artifacts/filename.zip"
+   ```
+
+2. Run final release readiness check:
+   ```bash
+   ./scripts/release-readiness.sh
+   ```
+
+3. Upload manually from `.ollamaclaw/artifacts/` as needed

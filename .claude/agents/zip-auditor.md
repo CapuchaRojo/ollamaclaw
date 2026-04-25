@@ -62,6 +62,16 @@ Before auditing:
 - Do not claim package completeness without comparing to expected files.
 - Treat `.claude/settings.local.json`, `.env*`, API keys, tokens, and credentials as do-not-share unless the user explicitly confirms otherwise.
 
+## Preferred Package Location
+
+Safe packages created by `./scripts/package-ollamaclaw.sh` are stored under:
+
+```
+.ollamaclaw/artifacts/ollamaclaw-YYYYMMDD-HHMMSS.zip
+```
+
+**Root-level ZIPs** (e.g., `ollamaclaw.zip` at project root) are warning signs unless intentionally external/manual. Recommend moving to `.ollamaclaw/artifacts/` or recreating with the package script.
+
 ## Reference-Only Verification
 
 When packages include reference docs (e.g., `docs/reference-synthesis.md`, `docs/c-src-reference-map.md`):

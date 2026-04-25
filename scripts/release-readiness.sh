@@ -94,7 +94,7 @@ else
     record_pass "No sensitive files tracked (.env, .key, .pem, settings.local.json)"
 fi
 
-# Warn on root zip files
+# Warn on root zip files (excluding .ollamaclaw/artifacts/)
 ZIP_FILES=()
 while IFS= read -r -d '' file; do
     ZIP_FILES+=("$file")
@@ -102,10 +102,20 @@ done < <(find "$PROJECT_ROOT" -maxdepth 1 -type f -name "*.zip" -print0 2>/dev/n
 
 if [ ${#ZIP_FILES[@]} -gt 0 ]; then
     for f in "${ZIP_FILES[@]}"; do
-        record_warn "Root ZIP file found: $f"
+        record_warn "Root ZIP file found: $f (use ./scripts/package-ollamaclaw.sh for upload packages)"
     done
 else
     record_pass "No root ZIP files"
+fi
+
+# Check for packages in .ollamaclaw/artifacts/ (info only, not a warning)
+ARTIFACT_ZIPS=()
+while IFS= read -r -d '' file; do
+    ARTIFACT_ZIPS+=("$file")
+done < <(find "$PROJECT_ROOT/.ollamaclaw/artifacts" -type f -name "*.zip" -print0 2>/dev/null || true)
+
+if [ ${#ARTIFACT_ZIPS[@]} -gt 0 ]; then
+    echo "[INFO] Found ${#ARTIFACT_ZIPS[@]} package(s) in .ollamaclaw/artifacts/ (git-ignored, safe for upload)"
 fi
 
 # Warn on _bootstrap_junk

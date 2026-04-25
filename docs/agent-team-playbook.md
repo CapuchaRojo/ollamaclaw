@@ -318,6 +318,32 @@ This validates project structure, agent integrity, settings safety, tooling, scr
 
 ---
 
+### Workflow: Artifact Packaging Workflow
+
+**Scenario:** Creating a safe source package for upload, sharing, or client handoff.
+
+| Step | Agent / Script | Command |
+|------|----------------|---------|
+| 1 | `scope-lock` | "Lock scope: define package purpose and destination" |
+| 2 | `artifact-hygiene-check.sh` | `./scripts/artifact-hygiene-check.sh` |
+| 3 | `release-readiness.sh` | `./scripts/release-readiness.sh` |
+| 4 | `package-ollamaclaw.sh` | `./scripts/package-ollamaclaw.sh [filename.zip]` |
+| 5 | `zip-auditor` | "Audit this package: .ollamaclaw/artifacts/filename.zip" |
+| 6 | `release-scribe` | "Document package creation for commit/session log" |
+| 7 | `slice-closeout.sh` | `./scripts/slice-closeout.sh done <slice-name> "<summary>"` |
+
+**Blocker Condition:** If `artifact-hygiene-check.sh` or `release-readiness.sh` reports FAIL, fix blockers before packaging. If `zip-auditor` reports BLOCKER, do not upload.
+
+**Note:** Packages go to `.ollamaclaw/artifacts/` (git-ignored). Upload manually after audit.
+
+**Exclusions:** The package script automatically excludes:
+- `.git/`, `.claude/settings.local.json`, `.env*`, `*.pem`, `*.key`
+- `node_modules/`, `__pycache__/`, `.venv/`, `venv/`
+- `_bootstrap_junk/`, `*.tar*`, root-level `*.zip`
+- `.ollamaclaw/artifacts/`, `.ollamaclaw/tmp/`
+
+---
+
 ### Workflow: Parallel Slice Workflow
 
 **Scenario:** Implementing multiple independent slices simultaneously using multiple terminals or worktrees.

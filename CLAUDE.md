@@ -128,6 +128,10 @@ For Ollamaclaw harness work (WSL, Ollama, Claude Code, launchers, agents, git):
 
 **For repo hygiene changes,** route through `patch-planner` and `rollback-planner` before editing. Repo hygiene agents (`script-hardener`, `dependency-scout`, `security-sweeper`, `license-warden`, `rollback-planner`, `patch-planner`) follow audit-first discipline — they inspect and report, not edit.
 
+## Artifact Packaging Rule
+
+**Do not create root-level ZIPs manually.** Use `./scripts/package-ollamaclaw.sh` for all shareable/upload packages. Output goes to `.ollamaclaw/artifacts/` (git-ignored).
+
 ## First Task
 
 Inspect this folder, determine whether it is a Git repository, identify junk/bootstrap files, propose a clean starting structure for Ollamaclaw, and do not edit anything until Adam approves.

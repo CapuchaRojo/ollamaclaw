@@ -130,6 +130,25 @@ Before commit, push, zip, or handoff, run the release readiness check:
 
 See [docs/release-readiness-workflow.md](./docs/release-readiness-workflow.md) for details.
 
+## Packaging / Upload ZIP
+
+Create safe source packages for upload or sharing:
+
+```bash
+# Check artifact hygiene first
+./scripts/artifact-hygiene-check.sh
+
+# Create package (output: .ollamaclaw/artifacts/ollamaclaw-YYYYMMDD-HHMMSS.zip)
+./scripts/package-ollamaclaw.sh
+
+# Or with custom filename
+./scripts/package-ollamaclaw.sh my-package.zip
+```
+
+Packages exclude secrets, local settings, git internals, bootstrap junk, and nested archives.
+
+See [docs/artifact-hygiene-workflow.md](./docs/artifact-hygiene-workflow.md) for details.
+
 ## Parallel Work
 
 For guidance on using multiple Claude Code terminals safely:

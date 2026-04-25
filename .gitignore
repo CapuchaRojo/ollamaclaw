@@ -25,6 +25,10 @@ venv/
 dist/
 build/
 
+# Ollamaclaw artifacts (packages, release ZIPs)
+.ollamaclaw/artifacts/
+.ollamaclaw/tmp/
+
 # Local logs
 *.log
 
