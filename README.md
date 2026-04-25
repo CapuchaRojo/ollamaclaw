@@ -161,3 +161,14 @@ Track planned work slices before starting implementation:
 
 See [docs/slice-queue-workflow.md](./docs/slice-queue-workflow.md) for details.
 
+## Slice Closeout
+
+Finalize a completed slice after review/commit:
+
+```bash
+./scripts/slice-closeout.sh dry-run <slice-name>
+./scripts/slice-closeout.sh done <slice-name> "Summary"
+```
+
+See [docs/slice-closeout-workflow.md](./docs/slice-closeout-workflow.md) for details.
+

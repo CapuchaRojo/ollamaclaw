@@ -181,7 +181,10 @@ Benefits:
 1. Validate (doctor, source truth, inventory)
 2. Review (git-guardian)
 3. Commit (commit-captain)
-4. Log session: `./scripts/session-log.sh "Completed slice: <description>"`
+4. Closeout: `./scripts/slice-closeout.sh done <slice-name> "<summary>"`
+5. Pick next slice: `./scripts/slice-queue.sh next`
+
+See [Slice Closeout Workflow](./slice-closeout-workflow.md) for the full closeout protocol.
 
 ### Between Slices
 

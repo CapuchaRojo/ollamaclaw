@@ -299,6 +299,25 @@ This validates project structure, agent integrity, settings safety, tooling, scr
 
 ---
 
+### Workflow: Slice Closeout Workflow
+
+**Scenario:** Finalizing a completed slice after commit.
+
+| Step | Agent / Script | Command |
+|------|----------------|---------|
+| 1 | `release-readiness.sh` | `./scripts/release-readiness.sh` |
+| 2 | `git-guardian` | "Review staged changes for release safety" |
+| 3 | `commit-captain` | "Create commit message" |
+| 4 | `slice-closeout.sh dry-run` | `./scripts/slice-closeout.sh dry-run <slice-name>` |
+| 5 | `slice-closeout.sh done/blocked/deferred` | `./scripts/slice-closeout.sh done <slice-name> "<summary>"` |
+| 6 | `slice-queue.sh next` | `./scripts/slice-queue.sh next` |
+
+**Blocker Condition:** If `release-readiness.sh` reports FAIL, fix blockers before closeout. If `slice-closeout.sh dry-run` reports FAIL, do not mark done.
+
+**Note:** Closeout does NOT commit or push. It updates queue status, appends closeout notes, and logs to session.
+
+---
+
 ### Workflow: Parallel Slice Workflow
 
 **Scenario:** Implementing multiple independent slices simultaneously using multiple terminals or worktrees.

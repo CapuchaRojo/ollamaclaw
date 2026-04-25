@@ -114,6 +114,19 @@ After completing a slice:
 
 The session log captures what was done; the queue captures what to do next.
 
+### slice-closeout.sh
+
+For a complete closeout workflow that runs diagnostics, updates queue status, and logs in one command:
+
+```bash
+./scripts/slice-closeout.sh dry-run <slice-name>   # Validate before marking done
+./scripts/slice-closeout.sh done <slice-name> "<summary>"  # Mark complete
+./scripts/slice-closeout.sh blocked <slice-name> "<reason>"  # Mark blocked
+./scripts/slice-closeout.sh deferred <slice-name> "<reason>"  # Mark deferred
+```
+
+See [Slice Closeout Workflow](./slice-closeout-workflow.md) for details.
+
 ## Recommended Sequence
 
 ```

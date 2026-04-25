@@ -120,6 +120,10 @@ For Ollamaclaw harness work (WSL, Ollama, Claude Code, launchers, agents, git):
 
 **Work one active slice at a time** unless a worktree plan exists for parallel-safe non-overlapping work.
 
+## Slice Closeout Rule
+
+**After a committed slice,** close it with `./scripts/slice-closeout.sh done <slice-name> "<summary>"` before starting the next major slice.
+
 ## Repo Hygiene Rule
 
 **For repo hygiene changes,** route through `patch-planner` and `rollback-planner` before editing. Repo hygiene agents (`script-hardener`, `dependency-scout`, `security-sweeper`, `license-warden`, `rollback-planner`, `patch-planner`) follow audit-first discipline — they inspect and report, not edit.

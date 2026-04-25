@@ -176,11 +176,12 @@ RESULT: FAIL - Hard release blockers detected. Fix before proceeding.
 After release-readiness passes and the commit is complete:
 
 ```bash
-./scripts/slice-queue.sh status <slice-name> done
-./scripts/session-log.sh "Completed slice: <slice-name> - <description>"
+./scripts/slice-closeout.sh done <slice-name> "<summary>"
 ```
 
-The slice queue tracks the completion; session log captures what was done.
+This updates the slice queue status, appends closeout notes (Closed, Summary, Branch, Commit), and logs to the session record.
+
+See [Slice Closeout Workflow](./slice-closeout-workflow.md) for the full closeout protocol.
 
 ## Parallel Branches / Worktrees
 

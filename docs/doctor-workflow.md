@@ -128,6 +128,19 @@ For worktree planning and creation:
 
 See [Parallel Slice Workflow](./parallel-slice-workflow.md) and [Worktree Slice Workflow](./worktree-slice-workflow.md) for the full protocol.
 
+### M. Slice Closeout (Optional Project Lifecycle Helper)
+
+After completing and committing a slice, run the closeout workflow to finalize:
+
+```bash
+./scripts/slice-closeout.sh dry-run <slice-name>   # Validate before marking done
+./scripts/slice-closeout.sh done <slice-name> "<summary>"  # Mark complete
+```
+
+Closeout runs doctor, source-truth, inventory, and release-readiness as diagnostics, then updates queue status and logs to session.
+
+See [Slice Closeout Workflow](./slice-closeout-workflow.md) for details.
+
 ---
 
 ```bash
