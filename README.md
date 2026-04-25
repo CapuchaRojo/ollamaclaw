@@ -54,6 +54,16 @@ Do not present local models as stable Claude Code fallbacks unless they pass smo
 ./scripts/check-env.sh
 ```
 
+## Doctor / Preflight
+
+Run the Ollamaclaw health check before cloud work, after patches, before commit, or before uploading a zip:
+
+```bash
+./scripts/ollamaclaw-doctor.sh
+```
+
+See [docs/doctor-workflow.md](./docs/doctor-workflow.md) for details.
+
 ## Architecture Docs
 
 For deeper understanding of Ollamaclaw's design:

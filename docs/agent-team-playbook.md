@@ -133,6 +133,18 @@ This playbook explains how Ollamaclaw's reusable subagents coordinate when audit
 
 Workflows for maintaining the Ollamaclaw harness itself.
 
+### Step 0: Doctor Preflight (Recommended First)
+
+**Before any harness work**, run the doctor:
+
+```bash
+./scripts/ollamaclaw-doctor.sh
+```
+
+This validates project structure, agent integrity, settings safety, tooling, script executability, and documentation presence. Fix any FAIL items before proceeding to specialist agents.
+
+---
+
 ### Workflow: Broken WSL/Ollama/Claude Setup
 
 **Scenario:** Commands not found, routing broken, environment confusion.

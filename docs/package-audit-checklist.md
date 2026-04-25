@@ -2,6 +2,18 @@
 
 Use this checklist before uploading, sharing, or applying a source ZIP or manual patch package.
 
+## 0. Run the Doctor
+
+Before zipping or releasing, run:
+
+```bash
+./scripts/ollamaclaw-doctor.sh
+```
+
+Confirm no FAIL items. Review WARN items. Proceed only when harness is healthy.
+
+---
+
 ## 1. Identify the package purpose
 
 - Source snapshot

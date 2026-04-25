@@ -9,8 +9,10 @@ Ollamaclaw uses a **cloud-first** model routing strategy through Ollama Cloud, w
 ### Primary Path: Cloud Mode
 
 ```
-VS Code Terminal → Ollama CLI → Ollama Cloud → Anthropic API
+VS Code Terminal → Ollama CLI → Ollama Cloud → Ollama Model
 ```
+
+**Important:** Claude Code speaks to a local Ollama endpoint using Anthropic-compatible routing. Ollama then routes requests through Ollama Cloud to the selected Ollama model, usually `qwen3.5:397b-cloud`. Ollamaclaw does not call Anthropic API directly.
 
 **Environment configuration:**
 

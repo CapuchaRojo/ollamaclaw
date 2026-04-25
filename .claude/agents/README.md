@@ -12,6 +12,14 @@ Ollamaclaw hosts reusable project-local subagents for auditing external repos an
 
 Agents for maintaining the Ollamaclaw harness itself: WSL, Ollama routing, Claude Code settings, launchers, subagent hygiene, git hygiene, and task routing.
 
+**Before invoking specialist harness agents**, run the doctor first:
+
+```bash
+./scripts/ollamaclaw-doctor.sh
+```
+
+The doctor validates project structure, agent integrity, settings safety, and tooling availability. Fix any FAIL items before proceeding to specialist agents.
+
 | Agent | Purpose | When to Invoke |
 |-------|---------|----------------|
 | [`scope-lock`](scope-lock.md) | Locks goal, target repo, allowed files, and stop condition before work begins | When work starts getting broad, multiple agents involved, controlled patching needed |
