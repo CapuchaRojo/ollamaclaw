@@ -106,6 +106,10 @@ For Ollamaclaw harness work (WSL, Ollama, Claude Code, launchers, agents, git):
 
 **Before creating new agents:** Run `./scripts/agent-inventory.sh` and keep `.claude/agents/README.md` + `docs/agent-team-playbook.md` in sync. Do not mass-create agents without governance, inventory, and playbook updates.
 
+## Parallel Work Rule
+
+**Do not run multiple writer sessions on the same branch.** Use queued prompts or separate worktrees for parallel work. Run `./scripts/parallel-safety-check.sh` before parallel work.
+
 ## First Task
 
 Inspect this folder, determine whether it is a Git repository, identify junk/bootstrap files, propose a clean starting structure for Ollamaclaw, and do not edit anything until Adam approves.

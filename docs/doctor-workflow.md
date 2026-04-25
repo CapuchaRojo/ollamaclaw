@@ -97,6 +97,37 @@ This wrapper runs:
 
 See [Release Readiness Workflow](./release-readiness-workflow.md) for details.
 
+### K. Parallel Safety Check (Optional Diagnostic)
+
+Before using multiple terminals or worktrees, run the parallel safety check:
+
+```bash
+./scripts/parallel-safety-check.sh
+```
+
+This script verifies git state, file-scope risk, and harness safety, then prints a SAFE / WARN / FAIL recommendation.
+
+See [Parallel Slice Workflow](./parallel-slice-workflow.md) for the full protocol.
+
+---
+
+## When to Run the Doctor
+
+```bash
+./scripts/release-readiness.sh
+```
+
+This wrapper runs:
+- Doctor (harness health)
+- Source truth check (docs/scripts/agents consistency)
+- Agent inventory (frontmatter validation)
+- Git state checks
+- Package safety (sensitive files, ZIP artifacts)
+- Reference-only rule verification
+- Release docs confirmation
+
+See [Release Readiness Workflow](./release-readiness-workflow.md) for details.
+
 ---
 
 ## When to Run the Doctor

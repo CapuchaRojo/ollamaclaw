@@ -128,3 +128,13 @@ Before commit, push, zip, or handoff, run the release readiness check:
 
 See [docs/release-readiness-workflow.md](./docs/release-readiness-workflow.md) for details.
 
+## Parallel Work
+
+For guidance on using multiple Claude Code terminals safely:
+
+```bash
+./scripts/parallel-safety-check.sh
+```
+
+See [docs/parallel-slice-workflow.md](./docs/parallel-slice-workflow.md) for the full protocol.
+

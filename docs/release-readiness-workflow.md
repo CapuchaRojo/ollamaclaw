@@ -25,6 +25,7 @@ Run `./scripts/release-readiness.sh` in these situations:
 | **After applying manual patches** | Confirm no structural damage |
 | **Before reference-driven implementation** | Confirm reference-only boundaries are clear |
 | **Before client handoff** | Ensure release docs and audit trails exist |
+| **Before merging parallel branches** | Each branch must pass independently |
 
 ## What Scripts to Run
 
@@ -169,6 +170,17 @@ RESULT: FAIL - Hard release blockers detected. Fix before proceeding.
 9. commit-captain (create commit message)
 10. git push (after all checks pass)
 ```
+
+## Parallel Branches / Worktrees
+
+When working on parallel slices with separate branches or worktrees:
+
+1. Each branch must pass `./scripts/release-readiness.sh` **independently** before merge
+2. Run `./scripts/parallel-safety-check.sh` to confirm no file-scope conflicts
+3. Merge one branch at a time
+4. Run `./scripts/release-readiness.sh` again after all merges complete
+
+See [Parallel Slice Workflow](./parallel-slice-workflow.md) for the full protocol.
 
 ## Exit Codes
 

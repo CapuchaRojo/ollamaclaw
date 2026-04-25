@@ -257,6 +257,27 @@ This validates project structure, agent integrity, settings safety, tooling, scr
 
 ---
 
+### Workflow: Parallel Slice Workflow
+
+**Scenario:** Implementing multiple independent slices simultaneously using multiple terminals or worktrees.
+
+| Step | Agent / Script | Command |
+|------|----------------|---------|
+| 1 | `scope-lock` | "Lock scope: define slice names and file scopes" |
+| 2 | `parallel-safety-check.sh` | `./scripts/parallel-safety-check.sh` |
+| 3 | `task-router` | "Route each slice to appropriate agent chain" |
+| 4 | (Implement) | Parallel work on separate branches/worktrees |
+| 5 | `git-guardian` | "Review changes from each branch before merge" |
+| 6 | `release-readiness.sh` | `./scripts/release-readiness.sh` (each branch) |
+| 7 | `release-readiness.sh` | `./scripts/release-readiness.sh` (after merge) |
+| 8 | `commit-captain` | "Create commit message for merged changes" |
+
+**Blocker Condition:** If `parallel-safety-check.sh` reports high-conflict file conflicts, use sequential work instead. If `release-readiness.sh` reports FAIL on any branch, fix before merge.
+
+**File Scope Rule:** Parallel slices must have non-overlapping file scopes. High-conflict files (README, CLAUDE, .claude/, docs/) require sequential work.
+
+---
+
 ## Claw Code Emulation Docs
 
 Ollamaclaw emulates concepts from the Claw Code reference implementation without copying code. These docs capture the architectural decisions:
