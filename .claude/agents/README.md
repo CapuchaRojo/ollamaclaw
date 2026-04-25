@@ -38,6 +38,21 @@ The doctor validates project structure, agent integrity, settings safety, and to
 
 ---
 
+## Agent Governance
+
+Agents that maintain agent inventory accuracy, playbook alignment, and documentation consistency.
+
+| Agent | Purpose | When to Invoke |
+|-------|---------|----------------|
+| [`agent-indexer`](agent-indexer.md) | Maintains agent inventory, README index, categories, and counts | After adding agents, before committing `.claude/agents/`, when README seems out of sync |
+| [`playbook-steward`](playbook-steward.md) | Maintains `docs/agent-team-playbook.md` workflows | After adding agents/commands, before playbook releases, when workflows seem outdated |
+| [`readme-carpenter`](readme-carpenter.md) | Keeps `README.md` accurate, runnable, and aligned with scripts/docs | After script changes, before releases, when onboarding seems confusing |
+| [`claude-md-steward`](claude-md-steward.md) | Keeps `CLAUDE.md` aligned with actual Ollamaclaw behavior | After major workflow changes, when CLAUDE.md seems outdated |
+
+**Diagnostic:** Run `./scripts/agent-inventory.sh` for fast frontmatter validation.
+
+---
+
 ## Repo Hygiene / Source Truth Agents
 
 Agents that prevent documentation drift and docs-to-code desynchronization.

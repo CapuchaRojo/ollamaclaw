@@ -219,6 +219,26 @@ This validates project structure, agent integrity, settings safety, tooling, scr
 
 ---
 
+### Workflow: Agent Governance
+
+**Scenario:** Adding new agents safely without README drift, playbook drift, or boundary confusion.
+
+| Step | Agent | Command |
+|------|-------|---------|
+| 1 | `scope-lock` | "Lock scope: add new agent(s) with clear boundaries" |
+| 2 | `./scripts/agent-inventory.sh` | "Run baseline inventory check" |
+| 3 | `agent-indexer` | "Plan README index and category updates" |
+| 4 | `agent-lint-reviewer` | "Check for overlap, vague scope, unsafe permissions" |
+| 5 | `playbook-steward` | "Add/update workflows for new agents" |
+| 6 | `git-guardian` | "Review all staged changes" |
+| 7 | `commit-captain` | "Create commit message" |
+
+**Blocker Condition:** If `agent-lint-reviewer` reports BLOCKER (overlap, unsafe permissions, vague boundaries), fix before committing. If `agent-inventory.sh` fails (missing frontmatter, deprecated `type: subagent`), fix before proceeding.
+
+**Rule:** Do not mass-create agents without governance, inventory, and playbook updates.
+
+---
+
 ## Claw Code Emulation Docs
 
 Ollamaclaw emulates concepts from the Claw Code reference implementation without copying code. These docs capture the architectural decisions:

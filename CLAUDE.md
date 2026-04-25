@@ -102,6 +102,10 @@ For Ollamaclaw harness work (WSL, Ollama, Claude Code, launchers, agents, git):
 3. `git-guardian` — review source tree and staging risk
 4. `commit-captain` — create commit/package note if needed
 
+## Agent Governance Rule
+
+**Before creating new agents:** Run `./scripts/agent-inventory.sh` and keep `.claude/agents/README.md` + `docs/agent-team-playbook.md` in sync. Do not mass-create agents without governance, inventory, and playbook updates.
+
 ## First Task
 
 Inspect this folder, determine whether it is a Git repository, identify junk/bootstrap files, propose a clean starting structure for Ollamaclaw, and do not edit anything until Adam approves.

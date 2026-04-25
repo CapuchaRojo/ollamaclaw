@@ -103,6 +103,13 @@ Evaluate local models before using with Claude Code:
 - [JSON Leak Detection](./docs/json-leak-detection.md) — Detect raw tool-call JSON leakage
 - `./scripts/json-leak-detector.sh <file>` — Scan saved output for leaks
 
+## Agent Governance
+
+Ollamaclaw includes a governance layer to safely scale its subagent library without README drift, playbook drift, or vague agent boundaries.
+
+- [Agent Governance](./docs/agent-governance.md) — Rules, standards, and workflows for agent management
+- `./scripts/agent-inventory.sh` — Fast frontmatter validation
+
 ## Reference Roadmap
 
 Strategic docs based on Claw Code reference analysis:

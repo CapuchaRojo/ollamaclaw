@@ -63,6 +63,15 @@ The doctor does NOT automatically run JSON leak detection. This is an optional d
 
 See [JSON Leak Detection](./json-leak-detection.md) for details on when and how to use this diagnostic.
 
+### I. Agent Inventory (Optional)
+The doctor does NOT automatically run agent inventory. This is an optional diagnostic you can run manually when adding or auditing agents:
+
+```bash
+./scripts/agent-inventory.sh
+```
+
+See [Agent Governance](./agent-governance.md) for details on agent standards and workflows.
+
 ---
 
 ## When to Run the Doctor
