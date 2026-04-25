@@ -54,6 +54,15 @@ Confirms these docs exist:
 - Prints the latest session log file if present
 - Does NOT modify session logs
 
+### H. JSON Leak Detection (Optional)
+The doctor does NOT automatically run JSON leak detection. This is an optional diagnostic you can run manually when testing models:
+
+```bash
+./scripts/json-leak-detector.sh <path-to-output.txt>
+```
+
+See [JSON Leak Detection](./json-leak-detection.md) for details on when and how to use this diagnostic.
+
 ---
 
 ## When to Run the Doctor

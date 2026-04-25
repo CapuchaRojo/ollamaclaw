@@ -20,6 +20,16 @@ This document defines the smoke-test procedure to evaluate whether a local model
 | `qwen2.5-coder:14b` | **FAIL** | Leaked raw tool-call JSON on README read |
 | `qwen3-coder:30b` | **FAIL** (practical) | Technically ran after WSL memory tuning (~16GB + 16GB swap), but too slow for practical workflows |
 
+## JSON Leak Detector
+
+For automated scanning of Claude Code output, use:
+
+```bash
+./scripts/json-leak-detector.sh <path-to-output.txt>
+```
+
+See [JSON Leak Detection](./json-leak-detection.md) for usage details and pattern explanations.
+
 ## What Is JSON Leakage?
 
 When a model cannot properly format tool calls, it outputs **raw tool-call JSON as text** instead of structured tool invocations:
@@ -89,7 +99,17 @@ Copy/paste each prompt from the script output. Observe:
 - Does the model hallucinate or read accurately?
 - Does behavior degrade over multiple turns?
 
-### Step 4: Record the Result
+### Step 4: Scan for JSON Leaks
+
+Save the Claude Code output to a file and scan it:
+
+```bash
+./scripts/json-leak-detector.sh <path-to-output.txt>
+```
+
+See [JSON Leak Detection](./json-leak-detection.md) for details.
+
+### Step 5: Record the Result
 
 ```bash
 ./scripts/session-log.sh "Model smoke test: <model> = PASS/FAIL because <reason>"

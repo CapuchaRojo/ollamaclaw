@@ -37,11 +37,21 @@ Instead of executing: [TOOL: ReadFile path="README.md"]
 The model outputs: {"name": "ReadFile", "arguments": {"path": "README.md"}}
 ```
 
+This is a **Claude Code compatibility failure** — the model is printing tool invocations as text rather than executing them through the Claude Code agent protocol.
+
 This breaks the agent workflow because:
 
 1. Tool calls are not executed — they're printed as text
 2. The conversation continues with broken context
 3. The model may then try to "interpret" its own leaked JSON
+
+To detect this issue in saved output, use the JSON leak detector:
+
+```bash
+./scripts/json-leak-detector.sh <path-to-output.txt>
+```
+
+See [JSON Leak Detection](./json-leak-detection.md) for full details.
 
 ### Observed Behavior
 
@@ -156,3 +166,4 @@ If a local model passes all smoke tests:
 - [Provider Routing](./provider-routing.md) — Cloud vs local model strategy
 - [Launcher Patterns](./launcher-patterns.md) — How to launch different models
 - [Session Design](./session-design.md) — How tool calls are logged
+- [JSON Leak Detection](./json-leak-detection.md) — How to detect raw tool-call JSON leakage
