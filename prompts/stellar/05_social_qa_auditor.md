@@ -203,7 +203,7 @@ These are warnings but don't block publishing if approved:
 
 ### Source Truth Verification
 - [x] All claims have sources: Yes
-- [x] Sources are specific: Yes (vetcan.zip:modules/booking/, launchpad.pptx:slide-7)
+- [x] Sources are specific: Yes (pending exact repo-path verification; launchpad.pptx:slide-7)
 - [x] Proof language redacted: Yes (generalized)
 
 ### Brand Safety Check

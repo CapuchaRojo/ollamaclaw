@@ -166,7 +166,7 @@ Ready to breathe easier? Link in bio.
 
 **Example:**
 ```
-[Text overlay: "POV: You're a vet tech and..."]
+[Text overlay: "POV: You're a clinic coordinator and..."]
 [Visual: Phone ringing, stressed expression]
 
 "The phone won't stop ringing. You're trying to help a patient. And someone's asking about booking an appointment."

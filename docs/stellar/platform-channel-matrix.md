@@ -40,7 +40,7 @@ This document defines how VetCan content adapts to each social media platform. E
 - Industry insights
 - Team/hiring posts
 
-**Note:** Target audience is appointment-based service businesses (e.g., medical cannabis clinics, wellness centers, clinic operators). Veterinary is a future vertical.
+**Note:** Target audience is appointment-based service businesses (e.g., medical cannabis clinics, wellness centers, clinic operators, front desk teams). Veterinary clinics are a future vertical, not the current primary target.
 
 **Example post structure:**
 ```
@@ -197,7 +197,7 @@ This document defines how VetCan content adapts to each social media platform. E
 | TikTok | Skit: "POV: You're a front desk coordinator and the phone won't stop ringing" |
 | YouTube | "VetCan Booking Automation: Complete Walkthrough" |
 
-**Note:** Examples frame for appointment-based service businesses (e.g., medical cannabis clinics, wellness centers). Veterinary is a future vertical.
+**Note:** Examples frame for appointment-based service businesses (e.g., medical cannabis clinics, wellness centers, clinic operators, front desk teams). Veterinary clinics are a future vertical, not the current primary target.
 
 ---
 

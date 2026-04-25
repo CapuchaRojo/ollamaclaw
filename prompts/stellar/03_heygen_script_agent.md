@@ -184,9 +184,9 @@ Include these notes for each section:
 
 ## [HOOK: 0-2 seconds]
 
-**Visual:** Text overlay on stressed vet tech face
+**Visual:** Text overlay on stressed clinic coordinator face
 **Avatar:** (No dialogue, reaction shot)
-**Text Overlay:** "POV: You're a vet tech and..."
+**Text Overlay:** "POV: You're a clinic coordinator and..."
 
 ## [SETUP: 2-8 seconds]
 
@@ -198,7 +198,7 @@ Include these notes for each section:
 
 **Visual:** Phone transforms to VetCan UI
 **Avatar:** "VetCan handles the calls. Books the appointments. Sends the reminders."
-**Text Overlay:** "VetCan: AI ops for vets"
+**Text Overlay:** "VetCan: AI ops for service businesses"
 
 ## [CTA: 15-20 seconds]
 
