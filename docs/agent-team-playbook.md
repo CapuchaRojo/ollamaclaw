@@ -219,3 +219,23 @@ Ollamaclaw emulates concepts from the Claw Code reference implementation without
 | [Launcher Patterns](./launcher-patterns.md) | `ollama launch claude` vs. `claw` binary patterns |
 
 **Reference audit source:** `/mnt/c/Users/mich3/GitHubProjects/_references/claw-code` (read-only, no LICENSE — reference-only artifact)
+
+---
+
+## Reference-Driven Build Lanes
+
+Ollamaclaw's strategic build lanes are derived from reference analysis:
+
+- [Next Five Lanes](./next-five-lanes.md) — 5-lane roadmap with goals, slices, and validation
+
+**Lane summary:**
+
+| Lane | Goal | First Slice |
+|------|------|-------------|
+| 1 | Model routing hardening | Update provider-routing.md |
+| 2 | JSON-leak detection | Auto-detect in smoke test |
+| 3 | Session logging evolution | JSONL option |
+| 4 | Agent-chain orchestration | Quick command reference |
+| 5 | Release audit discipline | Reference-only verification |
+
+**Recommended order:** 1 → 2 → 5 → 3 → 4

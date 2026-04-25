@@ -125,14 +125,31 @@ Before any local model can be considered Claude Code-compatible, it must pass th
 - File read/write operations via Claude Code
 - Any workflow requiring reliable tool execution
 
+## Smoke Test Harness
+
+A repeatable smoke-test script is available for evaluating local models:
+
+```bash
+./scripts/model-smoke-test.sh <model-name>
+```
+
+This script:
+- Verifies `ollama` and `claude` commands exist
+- Confirms the model is installed
+- Prints the exact launch command
+- Provides 5 test prompts (no-tool baseline, read tool, repo inspection, agent awareness, failure detection)
+- Does **NOT** launch Claude Code automatically (manual testing required)
+
+See [Model Smoke Tests](./model-smoke-tests.md) for full procedure and recorded results.
+
 ## Future Considerations
 
 If a local model passes all smoke tests:
 
-1. Document it in this file with test results
+1. Document it in [Model Smoke Tests](./model-smoke-tests.md) with test results
 2. Add to [Provider Routing](./provider-routing.md) as an approved fallback
 3. Update CLAUDE.md model guidance
-4. Create a repeatable smoke-test script for future model evaluation
+4. Consider auto-test harness for repeatable validation
 
 ## Related Docs
 

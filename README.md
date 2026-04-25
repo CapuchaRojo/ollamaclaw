@@ -74,3 +74,18 @@ Track work progress with session logging:
 
 - [Session Log Workflow](./docs/session-log-workflow.md) — How to use `./scripts/session-log.sh` and `./scripts/session-summary.sh`
 
+## Model Smoke Tests
+
+Evaluate local models before using with Claude Code:
+
+- [Model Smoke Tests](./docs/model-smoke-tests.md) — Test procedure and recorded results
+- `./scripts/model-smoke-test.sh <model>` — Run smoke-test checklist
+
+## Reference Roadmap
+
+Strategic docs based on Claw Code reference analysis:
+
+- [C.Src.Code Reference Map](./docs/c-src-reference-map.md) — Python source archive structure
+- [Reference Synthesis](./docs/reference-synthesis.md) — Comparison of references vs. Ollamaclaw
+- [Next Five Lanes](./docs/next-five-lanes.md) — Strategic build lanes for Ollamaclaw
+

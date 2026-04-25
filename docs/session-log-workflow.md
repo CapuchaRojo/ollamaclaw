@@ -68,6 +68,12 @@ Do **not** log:
 ./scripts/session-log.sh "Completed zip-auditor review of source package — no secrets detected, 3 expected files missing"
 ```
 
+### After a Model Smoke Test
+
+```bash
+./scripts/session-log.sh "Model smoke test: qwen2.5-coder:14b = FAIL because leaked raw tool-call JSON"
+```
+
 ## How to Use
 
 ### Log a Work Note

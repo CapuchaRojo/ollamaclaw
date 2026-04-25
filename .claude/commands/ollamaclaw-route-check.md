@@ -14,3 +14,13 @@ Constraints:
 - Do not delete models.
 - Do not edit files.
 - Do not run long Claude Code sessions.
+
+## Model Smoke Test
+
+To evaluate a local model's Claude Code compatibility:
+
+```bash
+./scripts/model-smoke-test.sh <model>
+```
+
+This prints the launch command and test prompts. Run manually and observe for JSON leakage.
