@@ -36,8 +36,8 @@ When cloud quota is exhausted:
 
 ```
 ┌─────────────┐     ┌──────────────┐     ┌─────────────────┐     ┌──────────────┐
-│  VS Code    │────▶│  Ollama CLI  │────▶│  Ollama Cloud   │────▶│  Anthropic   │
-│  (terminal) │     │  (local)     │     │  (model router) │     │  API         │
+│  VS Code    │────▶│  Ollama CLI  │────▶│  Ollama Cloud   │────▶│  Ollama      │
+│  (terminal) │     │  (local)     │     │  (model router) │     │  Model       │
 └─────────────┘     └──────────────┘     └─────────────────┘     └──────────────┘
        │                    │                      │                      │
        │                    │                      │                      │
@@ -45,6 +45,8 @@ When cloud quota is exhausted:
   User types           Sets env vars          Auth + routes          Processes
   claude cmd           ANTHROPIC_*            to cloud model         request
 ```
+
+**Note:** The request flows through Ollama Cloud to an Ollama model (e.g., `qwen3.5:397b-cloud`), not directly to Anthropic API. Ollamaclaw does not manage Anthropic credentials.
 
 ## Environment Variables
 
@@ -76,8 +78,10 @@ ollama launch claude --model qwen3.5:397b-cloud
 Ollama Cloud acts as a proxy:
 1. Receives Claude Code requests at `localhost:11434`
 2. Authenticates with Ollama Cloud using `ANTHROPIC_AUTH_TOKEN=ollama`
-3. Routes to Anthropic API with cloud-managed credentials
+3. Routes through Ollama Cloud to the selected Ollama model (usually `qwen3.5:397b-cloud`)
 4. Returns response through the same chain
+
+**Important:** Claude Code speaks to a local Ollama endpoint using Anthropic-compatible routing. Ollama then routes requests through Ollama Cloud to the selected Ollama model. Ollamaclaw does not call Anthropic API directly.
 
 ## Benefits
 

@@ -38,6 +38,19 @@ The doctor validates project structure, agent integrity, settings safety, and to
 
 ---
 
+## Repo Hygiene / Source Truth Agents
+
+Agents that prevent documentation drift and docs-to-code desynchronization.
+
+| Agent | Purpose | When to Invoke |
+|-------|---------|----------------|
+| [`source-truth-librarian`](source-truth-librarian.md) | Audits docs, scripts, README, CLAUDE.md, and commands for contradictions and stale claims | After editing multiple docs, before releases, when docs seem contradictory |
+| [`docs-to-code-syncer`](docs-to-code-syncer.md) | Checks that documented commands and workflows match implemented scripts and agents | After adding/removing scripts, before doc releases, when "this command doesn't work" |
+
+**Automated check:** Run `./scripts/source-truth-check.sh` for fast pattern-based validation before invoking these agents.
+
+---
+
 ## Cross-Repo Audit Agents
 
 Agents for auditing external repos like VetCan.

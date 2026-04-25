@@ -12,6 +12,16 @@ Before zipping or releasing, run:
 
 Confirm no FAIL items. Review WARN items. Proceed only when harness is healthy.
 
+## 0b. Run Source Truth Check
+
+After doctor passes, verify docs and scripts are consistent:
+
+```bash
+./scripts/source-truth-check.sh
+```
+
+Confirm no FAIL items (wording drift, missing scripts, deprecated agent frontmatter). Fix any contradictions before packaging.
+
 ---
 
 ## 1. Identify the package purpose

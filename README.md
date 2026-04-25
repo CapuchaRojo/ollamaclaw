@@ -64,6 +64,16 @@ Run the Ollamaclaw health check before cloud work, after patches, before commit,
 
 See [docs/doctor-workflow.md](./docs/doctor-workflow.md) for details.
 
+## Source Truth Checks
+
+Verify docs, scripts, and agents are consistent:
+
+```bash
+./scripts/source-truth-check.sh
+```
+
+See [docs/source-truth-workflow.md](./docs/source-truth-workflow.md) for details.
+
 ## Architecture Docs
 
 For deeper understanding of Ollamaclaw's design:

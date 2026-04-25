@@ -53,6 +53,18 @@ After running the doctor:
    - `settings-warden` for deep settings review
    - `git-guardian` for pre-commit review
 
+## Related Checks
+
+### Source Truth Check
+
+If doctor reports docs/scripts drift, run:
+
+```bash
+./scripts/source-truth-check.sh
+```
+
+This checks for wording contradictions, missing scripts, and deprecated agent frontmatter. See [docs/source-truth-workflow.md](../docs/source-truth-workflow.md).
+
 ## Documentation
 
 See [docs/doctor-workflow.md](../docs/doctor-workflow.md) for full details.
