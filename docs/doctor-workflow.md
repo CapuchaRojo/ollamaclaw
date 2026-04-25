@@ -170,7 +170,19 @@ See [Release Readiness Workflow](./release-readiness-workflow.md) for details.
 
 ## When to Run the Doctor
 
-Run `./scripts/ollamaclaw-doctor.sh` in these situations:
+Run via the OC Command Center:
+
+```bash
+./scripts/oc doctor
+```
+
+Or directly:
+
+```bash
+./scripts/ollamaclaw-doctor.sh
+```
+
+Run in these situations:
 
 | Situation | Why |
 |-----------|-----|

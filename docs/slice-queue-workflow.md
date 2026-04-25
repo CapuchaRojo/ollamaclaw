@@ -48,6 +48,18 @@ deferred    blocked
 
 ## Commands
 
+Run via the OC Command Center:
+
+```bash
+./scripts/oc queue list
+./scripts/oc queue next
+./scripts/oc queue add <slice-name> "<goal>"
+./scripts/oc queue show <slice-name>
+./scripts/oc queue status <slice-name> <status>
+```
+
+Or directly:
+
 ```bash
 # Add a new slice
 ./scripts/slice-queue.sh add <slice-name> "<goal>"

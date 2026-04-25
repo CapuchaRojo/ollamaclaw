@@ -139,3 +139,9 @@ Inspect this folder, determine whether it is a Git repository, identify junk/boo
 ## Toolchain Rule
 
 - Do not run sudo/install commands automatically. Use `./scripts/toolchain-doctor.sh` to print manual install guidance.
+
+## OC Command Center
+
+- Prefer `./scripts/oc` for operational workflows (status, doctor, toolchain, release, package, queue, closeout).
+- Keep `scripts/ollamaclaw` as the Claude Code launcher — invoke via `./scripts/oc launch-cloud`.
+

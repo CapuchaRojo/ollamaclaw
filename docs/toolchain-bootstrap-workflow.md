@@ -56,6 +56,14 @@ The toolchain doctor **prints** install commands but **never executes them**. Th
 
 ## How to Run
 
+Run via the OC Command Center:
+
+```bash
+./scripts/oc toolchain
+```
+
+Or directly:
+
 ```bash
 ./scripts/toolchain-doctor.sh
 ```

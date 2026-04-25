@@ -69,6 +69,14 @@ dist/, build/
 
 ### Step 1: Run Artifact Hygiene Check
 
+Run via the OC Command Center:
+
+```bash
+./scripts/oc hygiene
+```
+
+Or directly:
+
 ```bash
 ./scripts/artifact-hygiene-check.sh
 ```
@@ -79,6 +87,15 @@ Review output:
 - **FAIL**: Hard safety risks (tracked secrets) — fix before packaging
 
 ### Step 2: Create the Package
+
+Run via the OC Command Center:
+
+```bash
+./scripts/oc package
+./scripts/oc package my-package.zip
+```
+
+Or directly:
 
 ```bash
 # Default filename with timestamp

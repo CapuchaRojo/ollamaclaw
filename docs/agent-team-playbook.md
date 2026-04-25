@@ -129,6 +129,30 @@ This playbook explains how Ollamaclaw's reusable subagents coordinate when audit
 
 ---
 
+## Command Center Workflow
+
+Start Ollamaclaw harness work via the OC Command Center:
+
+```bash
+./scripts/oc status      # Fast summary: git, slice queue, doctor checks
+./scripts/oc toolchain   # Tool prerequisites
+./scripts/oc doctor      # Health check
+./scripts/oc truth       # Docs/scripts/agents consistency
+./scripts/oc agents      # Agent governance
+./scripts/oc release     # Pre-commit/push verification
+```
+
+Then route to specialist agents:
+
+```bash
+task-router              # Route to appropriate agent
+commit-captain           # Create commit message
+```
+
+See [docs/command-center-workflow.md](./command-center-workflow.md) for the full command table.
+
+---
+
 ## Ollamaclaw Install-Stage Workflows
 
 Workflows for maintaining the Ollamaclaw harness itself.
@@ -136,6 +160,12 @@ Workflows for maintaining the Ollamaclaw harness itself.
 ### Step 0: Doctor Preflight (Recommended First)
 
 **Before any harness work**, run the doctor:
+
+```bash
+./scripts/oc doctor
+```
+
+Or directly:
 
 ```bash
 ./scripts/ollamaclaw-doctor.sh

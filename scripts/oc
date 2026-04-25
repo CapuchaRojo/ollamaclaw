@@ -1,0 +1,200 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# OC Command Center — Unified safe wrapper for Ollamaclaw operational scripts.
+# Usage: oc <command> [args...]
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+cd "$PROJECT_ROOT"
+
+usage() {
+  cat <<EOF
+OC Command Center — Unified wrapper for Ollamaclaw operational scripts.
+
+Usage: oc <command> [args...]
+
+Commands:
+  help              Show this help message
+  status            Fast non-mutating summary (git, slice queue, doctor checks)
+  doctor            Run ollamaclaw-doctor.sh
+  toolchain         Run toolchain-doctor.sh
+  truth             Run source-truth-check.sh
+  agents            Run agent-inventory.sh
+  release           Run release-readiness.sh
+  hygiene           Run artifact-hygiene-check.sh
+  package [file]    Run package-ollamaclaw.sh [file]
+  queue [args]      Run slice-queue.sh [args]
+  closeout [args]   Run slice-closeout.sh [args]
+  worktree [args]   Run worktree-slice.sh [args]
+  parallel          Run parallel-safety-check.sh
+  model-smoke <m>   Run model-smoke-test.sh <model>
+  json-leak <f>     Run json-leak-detector.sh <file-or->
+  launch-cloud [...] Run ollamaclaw launcher with args
+
+Examples:
+  oc status
+  oc doctor
+  oc queue list
+  oc package
+  oc closeout dry-run toolchain-bootstrap-doctor
+  oc launch-cloud
+
+Safety Rules:
+  - oc does not commit or push
+  - oc does not run sudo
+  - oc does not create worktrees unless 'oc worktree create' is explicitly invoked
+  - oc does not launch Claude Code unless 'oc launch-cloud' is used
+
+Note: scripts/oc is for operational workflows. scripts/ollamaclaw is the
+Claude Code launcher — use 'oc launch-cloud' to invoke it.
+EOF
+}
+
+cmd_status() {
+  echo "=== Git Status ==="
+  git status --short --branch
+  echo
+  echo "=== Next Slice ==="
+  "$SCRIPT_DIR/slice-queue.sh" next || true
+  echo
+  echo "=== Toolchain Check ==="
+  "$SCRIPT_DIR/toolchain-doctor.sh" || true
+  echo
+  echo "=== Ollamaclaw Doctor ==="
+  "$SCRIPT_DIR/ollamaclaw-doctor.sh" || true
+}
+
+cmd_doctor() {
+  "$SCRIPT_DIR/ollamaclaw-doctor.sh"
+}
+
+cmd_toolchain() {
+  "$SCRIPT_DIR/toolchain-doctor.sh"
+}
+
+cmd_truth() {
+  "$SCRIPT_DIR/source-truth-check.sh"
+}
+
+cmd_agents() {
+  "$SCRIPT_DIR/agent-inventory.sh"
+}
+
+cmd_release() {
+  "$SCRIPT_DIR/release-readiness.sh"
+}
+
+cmd_hygiene() {
+  "$SCRIPT_DIR/artifact-hygiene-check.sh"
+}
+
+cmd_package() {
+  "$SCRIPT_DIR/package-ollamaclaw.sh" "$@"
+  echo
+  echo "Reminder: Run 'oc release' after packaging to verify release readiness."
+}
+
+cmd_queue() {
+  "$SCRIPT_DIR/slice-queue.sh" "$@"
+}
+
+cmd_closeout() {
+  "$SCRIPT_DIR/slice-closeout.sh" "$@"
+}
+
+cmd_worktree() {
+  "$SCRIPT_DIR/worktree-slice.sh" "$@"
+}
+
+cmd_parallel() {
+  "$SCRIPT_DIR/parallel-safety-check.sh"
+}
+
+cmd_model_smoke() {
+  if [[ $# -lt 1 ]]; then
+    echo "Usage: oc model-smoke <model>" >&2
+    exit 1
+  fi
+  "$SCRIPT_DIR/model-smoke-test.sh" "$1"
+}
+
+cmd_json_leak() {
+  if [[ $# -lt 1 ]]; then
+    echo "Usage: oc json-leak <file-or->" >&2
+    exit 1
+  fi
+  "$SCRIPT_DIR/json-leak-detector.sh" "$1"
+}
+
+cmd_launch_cloud() {
+  echo "Launching Claude Code through Ollama Cloud..."
+  exec "$SCRIPT_DIR/ollamaclaw" "$@"
+}
+
+# Main dispatch
+if [[ $# -lt 1 ]]; then
+  usage
+  exit 1
+fi
+
+CMD="$1"
+shift
+
+case "$CMD" in
+  help|-h|--help)
+    usage
+    ;;
+  status)
+    cmd_status
+    ;;
+  doctor)
+    cmd_doctor
+    ;;
+  toolchain)
+    cmd_toolchain
+    ;;
+  truth)
+    cmd_truth
+    ;;
+  agents)
+    cmd_agents
+    ;;
+  release)
+    cmd_release
+    ;;
+  hygiene)
+    cmd_hygiene
+    ;;
+  package)
+    cmd_package "$@"
+    ;;
+  queue)
+    cmd_queue "$@"
+    ;;
+  closeout)
+    cmd_closeout "$@"
+    ;;
+  worktree)
+    cmd_worktree "$@"
+    ;;
+  parallel)
+    cmd_parallel
+    ;;
+  model-smoke)
+    cmd_model_smoke "$@"
+    ;;
+  json-leak)
+    cmd_json_leak "$@"
+    ;;
+  launch-cloud)
+    cmd_launch_cloud "$@"
+    ;;
+  *)
+    echo "Unknown command: $CMD" >&2
+    echo
+    usage
+    exit 1
+    ;;
+esac

@@ -31,6 +31,14 @@ Run `./scripts/release-readiness.sh` in these situations:
 
 ### Primary Command
 
+Run via the OC Command Center:
+
+```bash
+./scripts/oc release
+```
+
+Or directly:
+
 ```bash
 ./scripts/release-readiness.sh
 ```

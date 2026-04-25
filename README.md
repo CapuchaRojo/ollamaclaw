@@ -201,3 +201,15 @@ Finalize a completed slice after review/commit:
 
 See [docs/slice-closeout-workflow.md](./docs/slice-closeout-workflow.md) for details.
 
+## OC Command Center
+
+Unified wrapper for all Ollamaclaw operational scripts:
+
+```bash
+./scripts/oc help
+./scripts/oc status
+./scripts/oc launch-cloud
+```
+
+See [docs/command-center-workflow.md](./docs/command-center-workflow.md) for the full command table and safety rules.
+

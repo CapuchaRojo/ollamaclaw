@@ -68,6 +68,7 @@ The recommended sequence for completing a slice:
 Show usage and examples:
 
 ```bash
+./scripts/oc closeout help
 ./scripts/slice-closeout.sh help
 ```
 
@@ -76,6 +77,7 @@ Show usage and examples:
 Validate a slice before marking it done:
 
 ```bash
+./scripts/oc closeout dry-run batch-2-repo-hygiene-agents
 ./scripts/slice-closeout.sh dry-run batch-2-repo-hygiene-agents
 ```
 
@@ -102,6 +104,7 @@ Use dry-run when:
 Mark a slice as completed:
 
 ```bash
+./scripts/oc closeout done batch-2-repo-hygiene-agents "Added 6 repo hygiene agents"
 ./scripts/slice-closeout.sh done batch-2-repo-hygiene-agents "Added 6 repo hygiene agents"
 ```
 
