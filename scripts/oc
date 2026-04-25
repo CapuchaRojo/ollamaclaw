@@ -31,6 +31,7 @@ Commands:
   parallel          Run parallel-safety-check.sh
   model-smoke <m>   Run model-smoke-test.sh <model>
   json-leak <f>     Run json-leak-detector.sh <file-or->
+  self-test [full]  Run oc-self-test.sh [full]
   launch-cloud [...] Run ollamaclaw launcher with args
 
 Examples:
@@ -128,6 +129,10 @@ cmd_json_leak() {
   "$SCRIPT_DIR/json-leak-detector.sh" "$1"
 }
 
+cmd_self_test() {
+  "$SCRIPT_DIR/oc-self-test.sh" "$@"
+}
+
 cmd_launch_cloud() {
   echo "Launching Claude Code through Ollama Cloud..."
   exec "$SCRIPT_DIR/ollamaclaw" "$@"
@@ -187,6 +192,9 @@ case "$CMD" in
     ;;
   json-leak)
     cmd_json_leak "$@"
+    ;;
+  self-test)
+    cmd_self_test "$@"
     ;;
   launch-cloud)
     cmd_launch_cloud "$@"

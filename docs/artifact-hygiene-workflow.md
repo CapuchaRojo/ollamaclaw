@@ -67,6 +67,16 @@ dist/, build/
 
 ## How to Package
 
+### Step 0: Run OC Self-Test (After Harness Changes)
+
+If you have changed `scripts/oc`, `.claude/commands/`, or operational scripts:
+
+```bash
+./scripts/oc self-test
+```
+
+See [docs/oc-self-test-workflow.md](./oc-self-test-workflow.md) for details.
+
 ### Step 1: Run Artifact Hygiene Check
 
 Run via the OC Command Center:

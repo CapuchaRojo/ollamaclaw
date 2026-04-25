@@ -47,17 +47,20 @@ The recommended sequence for completing a slice:
    ./scripts/source-truth-check.sh
    ./scripts/agent-inventory.sh
 
-3. Commit
+3. Run OC Self-Test (if scripts/commands changed)
+   ./scripts/oc self-test
+
+4. Commit
    git add <files>
    git commit -m "Add feature X"
 
-4. Run closeout
+5. Run closeout
    ./scripts/slice-closeout.sh done <slice-name> "Summary of what was done"
 
-5. Upload zip/package (if needed)
+6. Upload zip/package (if needed)
    # Create and audit package for handoff
 
-6. Pick next slice
+7. Pick next slice
    ./scripts/slice-queue.sh next
 ```
 

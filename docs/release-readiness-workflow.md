@@ -56,6 +56,7 @@ This script runs all checks and reports PASS / WARN / FAIL.
 ### Artifact Hygiene (Before ZIP/Upload)
 
 ```bash
+./scripts/oc self-test                # Run acceptance suite after harness changes
 ./scripts/artifact-hygiene-check.sh   # Check for clutter and packaging risk
 ./scripts/package-ollamaclaw.sh       # Create safe source package
 ```

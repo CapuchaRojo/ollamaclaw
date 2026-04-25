@@ -338,6 +338,24 @@ Install missing tools manually, then re-run doctor.
 
 ---
 
+### Workflow: OC Self-Test Workflow
+
+**Scenario:** Validating the command center and core workflows after major harness changes.
+
+| Step | Agent / Script | Command |
+|------|----------------|---------|
+| 1 | `oc self-test` | `./scripts/oc self-test` |
+| 2 | (if needed) `oc self-test full` | `./scripts/oc self-test full` |
+| 3 | `release-readiness.sh` | `./scripts/release-readiness.sh` |
+| 4 | `git-guardian` | "Review staged changes for release safety" |
+| 5 | `slice-closeout.sh` | `./scripts/slice-closeout.sh done <slice-name> "<summary>"` |
+
+**Blocker Condition:** If `oc self-test` reports FAIL, fix blockers before proceeding. Known acceptable WARNs: root ZIP, `_bootstrap_junk`, uncommitted changes.
+
+**Note:** Self-test does NOT launch Claude Code, create packages, or create worktrees.
+
+---
+
 ### Workflow: Slice Closeout Workflow
 
 **Scenario:** Finalizing a completed slice after commit.

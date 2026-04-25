@@ -201,6 +201,17 @@ Finalize a completed slice after review/commit:
 
 See [docs/slice-closeout-workflow.md](./docs/slice-closeout-workflow.md) for details.
 
+## OC Self-Test
+
+Run the OC self-test acceptance suite after major harness changes:
+
+```bash
+./scripts/oc self-test       # Default mode: non-mutating checks
+./scripts/oc self-test full  # Full mode: adds safe sample checks
+```
+
+See [docs/oc-self-test-workflow.md](./docs/oc-self-test-workflow.md) for details.
+
 ## OC Command Center
 
 Unified wrapper for all Ollamaclaw operational scripts:

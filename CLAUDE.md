@@ -144,4 +144,5 @@ Inspect this folder, determine whether it is a Git repository, identify junk/boo
 
 - Prefer `./scripts/oc` for operational workflows (status, doctor, toolchain, release, package, queue, closeout).
 - Keep `scripts/ollamaclaw` as the Claude Code launcher — invoke via `./scripts/oc launch-cloud`.
+- After major harness changes, run `./scripts/oc self-test` before recommending package/upload.
 

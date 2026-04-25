@@ -49,6 +49,7 @@ Use `scripts/oc` for operational workflows. Use `scripts/ollamaclaw` (or `oc lau
 | `oc parallel` | `parallel-safety-check.sh` | Parallel work safety |
 | `oc model-smoke <model>` | `model-smoke-test.sh` | Model validation |
 | `oc json-leak <file>` | `json-leak-detector.sh` | Detect raw tool-call JSON |
+| `oc self-test [full]` | `oc-self-test.sh` | Acceptance suite |
 | `oc launch-cloud [...]` | `ollamaclaw` | Launch Claude Code |
 
 ## Safe Usage Examples
@@ -101,6 +102,17 @@ After packaging, run `oc release` to verify readiness.
 ./scripts/oc launch-cloud
 ./scripts/oc launch-cloud --model qwen3.5:397b-cloud
 ```
+
+### OC Self-Test
+
+After major harness changes, run the acceptance suite:
+
+```bash
+./scripts/oc self-test       # Default mode
+./scripts/oc self-test full  # Full mode with sample checks
+```
+
+See [docs/oc-self-test-workflow.md](./oc-self-test-workflow.md) for details.
 
 ## Safety Rules
 
