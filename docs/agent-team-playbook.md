@@ -239,6 +239,24 @@ This validates project structure, agent integrity, settings safety, tooling, scr
 
 ---
 
+### Workflow: Release Readiness
+
+**Scenario:** Preparing to commit, push, zip, upload, or hand off a release.
+
+| Step | Agent / Script | Command |
+|------|----------------|---------|
+| 1 | `scope-lock` | "Lock scope: release readiness audit" |
+| 2 | `release-readiness.sh` | `./scripts/release-readiness.sh` |
+| 3 | `git-guardian` | "Review staged changes for release safety" |
+| 4 | `source-truth-librarian` | "Verify reference-only boundaries if touching reference docs" |
+| 5 | `zip-auditor` | "Audit ZIP/package before upload or handoff" |
+| 6 | `release-scribe` | "Generate release notes with doctor/source-truth/inventory results" |
+| 7 | `commit-captain` | "Create commit message for release" |
+
+**Blocker Condition:** If `release-readiness.sh` reports FAIL, fix blockers before proceeding. If reference docs are touched without copy-nothing confirmation, flag as BLOCKER.
+
+---
+
 ## Claw Code Emulation Docs
 
 Ollamaclaw emulates concepts from the Claw Code reference implementation without copying code. These docs capture the architectural decisions:

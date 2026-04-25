@@ -78,6 +78,25 @@ The doctor does NOT automatically run agent inventory. This is an optional diagn
 
 See [Agent Governance](./agent-governance.md) for details on agent standards and workflows.
 
+### J. Release Readiness (Higher-Level Wrapper)
+
+The doctor is one component of the broader release readiness check. For a complete pre-release audit:
+
+```bash
+./scripts/release-readiness.sh
+```
+
+This wrapper runs:
+- Doctor (harness health)
+- Source truth check (docs/scripts/agents consistency)
+- Agent inventory (frontmatter validation)
+- Git state checks
+- Package safety (sensitive files, ZIP artifacts)
+- Reference-only rule verification
+- Release docs confirmation
+
+See [Release Readiness Workflow](./release-readiness-workflow.md) for details.
+
 ---
 
 ## When to Run the Doctor

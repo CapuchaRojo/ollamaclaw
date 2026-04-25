@@ -2,25 +2,41 @@
 
 Use this checklist before uploading, sharing, or applying a source ZIP or manual patch package.
 
-## 0. Run the Doctor
+## 0. Run Release Readiness (First)
 
-Before zipping or releasing, run:
+Before zipping or releasing, run the release readiness check:
+
+```bash
+./scripts/release-readiness.sh
+```
+
+Confirm no FAIL items. Review WARN items. Proceed only when harness is healthy.
+
+## 0a. Run the Doctor
 
 ```bash
 ./scripts/ollamaclaw-doctor.sh
 ```
 
-Confirm no FAIL items. Review WARN items. Proceed only when harness is healthy.
+Confirm no FAIL items. Review WARN items.
 
 ## 0b. Run Source Truth Check
-
-After doctor passes, verify docs and scripts are consistent:
 
 ```bash
 ./scripts/source-truth-check.sh
 ```
 
 Confirm no FAIL items (wording drift, missing scripts, deprecated agent frontmatter). Fix any contradictions before packaging.
+
+## 0c. Reference-Only / LICENSE Verification
+
+Before packaging any reference-derived work:
+
+- [ ] Confirm `docs/reference-synthesis.md` states reference-only / copy-nothing stance.
+- [ ] Confirm `docs/c-src-reference-map.md` states reference-only / copy-nothing stance.
+- [ ] If LICENSE is missing from referenced sources (Claw Code, c.src.code), verify docs say "reference-only / concept emulation / no copying".
+- [ ] Never package code copied from Claw Code or c.src.code unless license explicitly allows it.
+- [ ] Current Ollamaclaw stance: references are concept-only, not code-derived.
 
 ---
 
@@ -80,3 +96,17 @@ Use a narrow commit message matching the package purpose, for example:
 ```bash
 git commit -m "Add zip audit workflow"
 ```
+
+## 7. Safe to Zip/Share Checklist
+
+Final confirmation before packaging or handoff:
+
+- [ ] `./scripts/release-readiness.sh` reports PASS (or acceptable WARNs)
+- [ ] `./scripts/ollamaclaw-doctor.sh` reports no FAIL items
+- [ ] `./scripts/source-truth-check.sh` reports no FAIL items
+- [ ] `./scripts/agent-inventory.sh` reports all agents valid
+- [ ] Reference-only docs confirm copy-nothing stance for Claw Code / c.src.code
+- [ ] No `.env*`, `.claude/settings.local.json`, `*.pem`, `*.key` files in package
+- [ ] No nested ZIP files unless intentional
+- [ ] No `_bootstrap_junk/` or build/cache folders
+- [ ] `zip-auditor` agent reports PASS or PASS WITH NOTES

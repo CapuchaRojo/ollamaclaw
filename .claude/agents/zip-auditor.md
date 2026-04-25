@@ -61,3 +61,11 @@ Before auditing:
 - Do not delete or rewrite archives.
 - Do not claim package completeness without comparing to expected files.
 - Treat `.claude/settings.local.json`, `.env*`, API keys, tokens, and credentials as do-not-share unless the user explicitly confirms otherwise.
+
+## Reference-Only Verification
+
+When packages include reference docs (e.g., `docs/reference-synthesis.md`, `docs/c-src-reference-map.md`):
+
+- Verify reference-only / copy-nothing status is stated.
+- Flag if package appears to contain copied code from Claw Code or c.src.code without license confirmation.
+- Confirm nested archives are intentional, not accidental.

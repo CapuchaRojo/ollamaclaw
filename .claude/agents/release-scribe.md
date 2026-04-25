@@ -65,6 +65,17 @@ Turns audit findings and patch results into commit notes, rollback notes, valida
 - <capability not widened>
 ```
 
+## Ollamaclaw-Specific Notes
+
+For Ollamaclaw harness releases, include in release notes:
+
+- **Doctor result:** PASS/WARN/FAIL from `./scripts/ollamaclaw-doctor.sh`
+- **Source truth result:** PASS/WARN/FAIL from `./scripts/source-truth-check.sh`
+- **Agent inventory result:** Agent count and frontmatter status
+- **Release readiness result:** PASS/WARN/FAIL from `./scripts/release-readiness.sh`
+- **Not-changed / not-claimed section:** What this release does NOT do
+- **Reference-only status:** When reference docs are touched, confirm "concept-only / copy-nothing" stance
+
 ## Constraints
 
 - **Be blocker-honest.** If any auditor reported BLOCKER, include it in rollback notes.

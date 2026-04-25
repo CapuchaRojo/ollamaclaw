@@ -118,3 +118,13 @@ Strategic docs based on Claw Code reference analysis:
 - [Reference Synthesis](./docs/reference-synthesis.md) — Comparison of references vs. Ollamaclaw
 - [Next Five Lanes](./docs/next-five-lanes.md) — Strategic build lanes for Ollamaclaw
 
+## Release Readiness
+
+Before commit, push, zip, or handoff, run the release readiness check:
+
+```bash
+./scripts/release-readiness.sh
+```
+
+See [docs/release-readiness-workflow.md](./docs/release-readiness-workflow.md) for details.
+
