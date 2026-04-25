@@ -1,0 +1,188 @@
+{
+  "campaign_id": "VETCAN-LAUNCH-2026-Q2",
+  "campaign_name": "VetCan Launch",
+  "manifest_version": "1.0.0",
+  "created_date": "2026-04-24",
+  "last_updated": "2026-04-24",
+  "videos": [
+    {
+      "video_id": "vetcan-launch-001",
+      "title": "VetCan Explainer: AI Operations Layer",
+      "description": "60-90 second overview of what VetCan is and what it does",
+      "platform": "LinkedIn",
+      "duration_seconds": 75,
+      "script_file": "scripts/001-explainer.md",
+      "avatar": "business-casual-01",
+      "voice": "professional-us-en",
+      "background": "neutral-office",
+      "status": "draft",
+      "approval_date": null,
+      "published_date": null,
+      "source_truth_refs": [
+        "vetcan.zip:README.md",
+        "launchpad.pptx:slide-3",
+        "launchpad.pptx:slide-5"
+      ],
+      "risk_level": 1,
+      "text_overlays": [
+        "AI operations layer",
+        "Calls + Chat + Booking",
+        "Built for launch"
+      ],
+      "cta": "vetcan.com/demo",
+      "utm_params": {
+        "utm_source": "linkedin",
+        "utm_medium": "social",
+        "utm_campaign": "vetcan-launch",
+        "utm_content": "video-001"
+      }
+    },
+    {
+      "video_id": "vetcan-launch-002",
+      "title": "POV: Phone Won't Stop Ringing",
+      "description": "20 second TikTok showing the problem VetCan solves",
+      "platform": "TikTok",
+      "duration_seconds": 20,
+      "script_file": "scripts/002-pov-phone.md",
+      "avatar": "casual-friendly-02",
+      "voice": "conversational-us-en",
+      "background": "clinic-setting",
+      "status": "draft",
+      "approval_date": null,
+      "published_date": null,
+      "source_truth_refs": [
+        "launchpad.pptx:slide-7",
+        "vetcan.zip:modules/booking/"
+      ],
+      "risk_level": 1,
+      "text_overlays": [
+        "POV: You're a vet tech and...",
+        "Phone. Won't. Stop.",
+        "VetCan: AI ops for vets",
+        "Link in bio"
+      ],
+      "cta": "Link in bio",
+      "utm_params": {
+        "utm_source": "tiktok",
+        "utm_medium": "social",
+        "utm_campaign": "vetcan-launch",
+        "utm_content": "video-002"
+      }
+    },
+    {
+      "video_id": "vetcan-launch-003",
+      "title": "Booking Automation Feature Highlight",
+      "description": "30 second spotlight on automated booking capability",
+      "platform": "Instagram",
+      "duration_seconds": 30,
+      "script_file": "scripts/003-booking-highlight.md",
+      "avatar": "warm-approachable-01",
+      "voice": "friendly-us-en",
+      "background": "soft-gradient",
+      "status": "draft",
+      "approval_date": null,
+      "published_date": null,
+      "source_truth_refs": [
+        "vetcan.zip:modules/booking/README.md",
+        "launchpad.pptx:slide-7"
+      ],
+      "risk_level": 1,
+      "text_overlays": [
+        "Automated booking",
+        "Less phone tag",
+        "More patient care",
+        "See how it works"
+      ],
+      "cta": "vetcan.com/demo",
+      "utm_params": {
+        "utm_source": "instagram",
+        "utm_medium": "social",
+        "utm_campaign": "vetcan-launch",
+        "utm_content": "video-003"
+      }
+    },
+    {
+      "video_id": "vetcan-launch-004",
+      "title": "Results Highlight: What Clinics Report",
+      "description": "45 second video on generalized results from VetCan users",
+      "platform": "LinkedIn",
+      "duration_seconds": 45,
+      "script_file": "scripts/004-results.md",
+      "avatar": "business-casual-01",
+      "voice": "professional-us-en",
+      "background": "neutral-office",
+      "status": "draft",
+      "approval_date": null,
+      "published_date": null,
+      "source_truth_refs": [
+        "vetcan.zip:modules/reminders/",
+        "launchpad.pptx:slide-10"
+      ],
+      "risk_level": 2,
+      "text_overlays": [
+        "Clinics report:",
+        "Reduced no-shows",
+        "Faster booking",
+        "More time for patients"
+      ],
+      "cta": "vetcan.com/demo",
+      "utm_params": {
+        "utm_source": "linkedin",
+        "utm_medium": "social",
+        "utm_campaign": "vetcan-launch",
+        "utm_content": "video-004"
+      }
+    },
+    {
+      "video_id": "vetcan-launch-005",
+      "title": "Final CTA: Book Your Demo",
+      "description": "15-30 second call-to-action for demo requests",
+      "platform": "All",
+      "duration_seconds": 25,
+      "script_file": "scripts/005-final-cta.md",
+      "avatar": "business-casual-01",
+      "voice": "professional-us-en",
+      "background": "vetcan-branded",
+      "status": "draft",
+      "approval_date": null,
+      "published_date": null,
+      "source_truth_refs": [
+        "launchpad.pptx:slide-15"
+      ],
+      "risk_level": 1,
+      "text_overlays": [
+        "Ready to get those hours back?",
+        "Book your demo today",
+        "vetcan.com/demo"
+      ],
+      "cta": "vetcan.com/demo",
+      "utm_params": {
+        "utm_source": "linkedin",
+        "utm_medium": "social",
+        "utm_campaign": "vetcan-launch",
+        "utm_content": "video-005"
+      }
+    }
+  ],
+  "production_notes": {
+    "avatar_guidelines": "Use business-casual avatars for LinkedIn, casual/friendly for TikTok and Instagram",
+    "voice_guidelines": "Professional tone for LinkedIn, conversational for social platforms",
+    "brand_colors": {
+      "primary": "#[TBD]",
+      "secondary": "#[TBD]",
+      "accent": "#[TBD]"
+    },
+    "logo_assets": "assets/logos/vetcan-logo-transparent.png",
+    "font_family": "[TBD - match brand guidelines]"
+  },
+  "approval_workflow": {
+    "level_1_videos": ["vetcan-launch-001", "vetcan-launch-002", "vetcan-launch-003", "vetcan-launch-005"],
+    "level_2_videos": ["vetcan-launch-004"],
+    "level_3_videos": [],
+    "required_reviewers": {
+      "level_1": ["Marketing Lead"],
+      "level_2": ["Marketing Lead", "Legal/Compliance"],
+      "level_3": ["Marketing Lead", "Legal/Compliance", "Customer", "Leadership"]
+    }
+  }
+}

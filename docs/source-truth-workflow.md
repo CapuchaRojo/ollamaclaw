@@ -136,7 +136,6 @@ Run `./scripts/source-truth-check.sh` in these situations:
 === C. Script References ===
 [PASS] Referenced script exists and is executable: ./scripts/model-smoke-test.sh
 [PASS] Referenced script exists and is executable: ./scripts/session-log.sh
-[WARN] Referenced script does not exist: ./scripts/removed-script.sh
 
 === D. Settings Safety ===
 [PASS] settings.json does not auto-allow 'Bash:git commit'
