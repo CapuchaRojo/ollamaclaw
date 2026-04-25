@@ -107,7 +107,14 @@ Before using multiple terminals or worktrees, run the parallel safety check:
 
 This script verifies git state, file-scope risk, and harness safety, then prints a SAFE / WARN / FAIL recommendation.
 
-See [Parallel Slice Workflow](./parallel-slice-workflow.md) for the full protocol.
+For worktree planning and creation:
+
+```bash
+./scripts/worktree-slice.sh plan <slice-name>
+./scripts/worktree-slice.sh create <slice-name>
+```
+
+See [Parallel Slice Workflow](./parallel-slice-workflow.md) and [Worktree Slice Workflow](./worktree-slice-workflow.md) for the full protocol.
 
 ---
 

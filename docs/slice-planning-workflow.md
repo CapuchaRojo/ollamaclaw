@@ -54,6 +54,18 @@ This script verifies:
 - Harness safety (doctor, source truth, inventory)
 - Provides SAFE / WARN / FAIL recommendation
 
+### Worktree vs Sequential Decision
+
+| Scenario | Approach |
+|----------|----------|
+| Non-overlapping file scopes | Separate worktree (`./scripts/worktree-slice.sh create`) |
+| Same high-conflict files | Sequential (queued prompts in one terminal) |
+| Independent features | Separate worktree + separate branch |
+| Related tasks in same slice | Sequential (one terminal) |
+| Cloud quota limited | Sequential (one terminal) |
+
+See [Worktree Slice Workflow](./worktree-slice-workflow.md) for the full protocol.
+
 ### 3. Route the Task
 
 Use `task-router` to select the appropriate agent chain for the slice type.

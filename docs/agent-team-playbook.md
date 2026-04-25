@@ -278,6 +278,31 @@ This validates project structure, agent integrity, settings safety, tooling, scr
 
 ---
 
+### Workflow: Worktree Slice Workflow
+
+**Scenario:** Creating an isolated worktree for parallel implementation.
+
+| Step | Agent / Script | Command |
+|------|----------------|---------|
+| 1 | `scope-lock` | "Lock scope: define slice goal, file scope, branch name" |
+| 2 | `worktree-slice.sh plan` | `./scripts/worktree-slice.sh plan <slice-name>` |
+| 3 | `parallel-safety-check.sh` | `./scripts/parallel-safety-check.sh` |
+| 4 | `task-router` | "Route slice to appropriate agent chain" |
+| 5 | `worktree-slice.sh create` | `./scripts/worktree-slice.sh create <slice-name>` |
+| 6 | (Implement) | Work in the new worktree |
+| 7 | `release-readiness.sh` | `./scripts/release-readiness.sh` (in worktree) |
+| 8 | `git-guardian` | "Review changes before merge" |
+| 9 | `release-readiness.sh` | `./scripts/release-readiness.sh` (after merge) |
+| 10 | `commit-captain` | "Create commit message" |
+
+**Blocker Condition:** If `parallel-safety-check.sh` reports FAIL, do not create the worktree. If `release-readiness.sh` reports FAIL in the worktree, fix before merge.
+
+**Cleanup:** After merge, remove worktree with `git worktree remove <path>` and delete branch with `git branch -d slice/<name>` if safe.
+
+See [Worktree Slice Workflow](../docs/worktree-slice-workflow.md) for details.
+
+---
+
 ## Claw Code Emulation Docs
 
 Ollamaclaw emulates concepts from the Claw Code reference implementation without copying code. These docs capture the architectural decisions:

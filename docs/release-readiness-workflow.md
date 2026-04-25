@@ -180,7 +180,9 @@ When working on parallel slices with separate branches or worktrees:
 3. Merge one branch at a time
 4. Run `./scripts/release-readiness.sh` again after all merges complete
 
-See [Parallel Slice Workflow](./parallel-slice-workflow.md) for the full protocol.
+**Worktree branches:** Every worktree branch must pass `release-readiness.sh` before merge to main.
+
+See [Parallel Slice Workflow](./parallel-slice-workflow.md) and [Worktree Slice Workflow](./worktree-slice-workflow.md) for the full protocol.
 
 ## Exit Codes
 

@@ -57,14 +57,17 @@ For true parallel implementation work:
 
 ```
 1. scope-lock          — Lock slice goal, file scope, branch name
-2. git worktree add    — Create isolated worktree (optional)
-3. git checkout -b     — Create slice-specific branch
-4. Implement           — Non-overlapping files only
-5. parallel-safety-check.sh — Verify boundaries before merge
-6. git-guardian        — Review changes
-7. release-readiness   — Pass before merge
-8. Merge to main       — One slice at a time
+2. worktree-slice.sh plan — Plan the worktree (see docs/worktree-slice-workflow.md)
+3. parallel-safety-check.sh — Verify boundaries before create
+4. worktree-slice.sh create — Create isolated worktree
+5. Implement           — Non-overlapping files only
+6. parallel-safety-check.sh — Verify boundaries before merge
+7. git-guardian        — Review changes
+8. release-readiness   — Pass before merge
+9. Merge to main       — One slice at a time
 ```
+
+Use `./scripts/worktree-slice.sh` for safe worktree management. See [Worktree Slice Workflow](./worktree-slice-workflow.md) for details.
 
 ### Non-Overlapping File Scopes
 

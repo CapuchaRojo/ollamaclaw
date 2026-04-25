@@ -138,3 +138,13 @@ For guidance on using multiple Claude Code terminals safely:
 
 See [docs/parallel-slice-workflow.md](./docs/parallel-slice-workflow.md) for the full protocol.
 
+## Worktree Slices
+
+For true parallel implementation with isolated worktrees:
+
+```bash
+./scripts/worktree-slice.sh plan <slice-name>
+```
+
+See [docs/worktree-slice-workflow.md](./docs/worktree-slice-workflow.md) for the full protocol.
+

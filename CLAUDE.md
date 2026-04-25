@@ -110,6 +110,10 @@ For Ollamaclaw harness work (WSL, Ollama, Claude Code, launchers, agents, git):
 
 **Do not run multiple writer sessions on the same branch.** Use queued prompts or separate worktrees for parallel work. Run `./scripts/parallel-safety-check.sh` before parallel work.
 
+**Worktree creation must be planned first.** Use `./scripts/worktree-slice.sh plan <slice-name>` before creating a worktree. Do not create worktrees automatically unless user explicitly asks.
+
+**Prefer queued prompts for same-file work.** Worktrees are for non-overlapping file scopes only.
+
 ## First Task
 
 Inspect this folder, determine whether it is a Git repository, identify junk/bootstrap files, propose a clean starting structure for Ollamaclaw, and do not edit anything until Adam approves.
