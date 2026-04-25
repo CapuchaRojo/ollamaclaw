@@ -203,3 +203,19 @@ Workflows for maintaining the Ollamaclaw harness itself.
 | 4 | `settings-warden` | "Check settings for dangerous permissions or local config leakage" |
 
 **Blocker Condition:** If secrets, `.claude/settings.local.json`, `.env*`, nested junk archives, or missing required files are detected, flag before packaging.
+
+---
+
+## Claw Code Emulation Docs
+
+Ollamaclaw emulates concepts from the Claw Code reference implementation without copying code. These docs capture the architectural decisions:
+
+| Doc | Purpose |
+|-----|---------|
+| [Provider Routing](./provider-routing.md) | Cloud-first model routing vs. Claw Code's multi-provider sniffing |
+| [Tool Abstraction](./tool-abstraction.md) | Tool-call behavior, JSON leakage issue, smoke-test requirements |
+| [Agent Protocol](./agent-protocol.md) | `.claude/agents/` system vs. Claw Code's slash-command/runtime model |
+| [Session Design](./session-design.md) | Session logging approach vs. Claw Code's `.claw/sessions/*.jsonl` |
+| [Launcher Patterns](./launcher-patterns.md) | `ollama launch claude` vs. `claw` binary patterns |
+
+**Reference audit source:** `/mnt/c/Users/mich3/GitHubProjects/_references/claw-code` (read-only, no LICENSE — reference-only artifact)

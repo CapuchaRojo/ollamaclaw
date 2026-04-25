@@ -53,3 +53,17 @@ Do not present local models as stable Claude Code fallbacks unless they pass smo
 ```bash
 ./scripts/check-env.sh
 ```
+
+## Architecture Docs
+
+For deeper understanding of Ollamaclaw's design:
+
+| Doc | Purpose |
+|-----|---------|
+| [Provider Routing](./docs/provider-routing.md) | Cloud-first model routing strategy |
+| [Tool Abstraction](./docs/tool-abstraction.md) | Tool-call behavior and JSON leakage issue |
+| [Agent Protocol](./docs/agent-protocol.md) | Subagent orchestration system |
+| [Session Design](./docs/session-design.md) | Session logging approach |
+| [Launcher Patterns](./docs/launcher-patterns.md) | Launch commands and validation |
+
+See [docs/](./docs/) for additional documentation.
