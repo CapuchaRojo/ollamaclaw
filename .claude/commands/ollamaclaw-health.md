@@ -15,3 +15,13 @@ Constraints:
 - Do not edit files.
 - Do not commit.
 - Do not run long model tests.
+
+## Session Log Inspection
+
+After health check, session logs can be inspected with:
+
+```bash
+./scripts/session-summary.sh
+```
+
+This shows recent work notes and can help identify patterns (e.g., repeated quota issues, routing changes).

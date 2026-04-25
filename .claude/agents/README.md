@@ -44,6 +44,8 @@ Agents for auditing external repos like VetCan.
 | [`test-commander`](test-commander.md) | Runs minimal relevant test group | After code changes, before commits |
 | [`release-scribe`](release-scribe.md) | Generates commit notes, rollback notes, client-safe summaries | Before commits and releases |
 
+**Note on session logging:** Ollamaclaw session logs (`.ollamaclaw/sessions/*.md`) are lightweight work notes, not full runtime transcripts. They capture what was done, not every tool call. `release-scribe` generates commit/release documentation; session logs provide a work history trail.
+
 ---
 
 ## Suggested Agent Chains

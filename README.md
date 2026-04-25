@@ -67,3 +67,10 @@ For deeper understanding of Ollamaclaw's design:
 | [Launcher Patterns](./docs/launcher-patterns.md) | Launch commands and validation |
 
 See [docs/](./docs/) for additional documentation.
+
+## Session Logs
+
+Track work progress with session logging:
+
+- [Session Log Workflow](./docs/session-log-workflow.md) — How to use `./scripts/session-log.sh` and `./scripts/session-summary.sh`
+

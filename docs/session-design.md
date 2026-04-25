@@ -92,15 +92,39 @@ Scope locked
 | Where to store? | Project-local (`.claude/sessions/`) or global (`~/.ollamaclaw/sessions/`) |
 | Resume support? | Manual (user copies session) vs. automated (`--resume` flag) |
 
+## Implemented Phase 1
+
+Ollamaclaw now provides manual session logging scripts:
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/session-log.sh` | Append timestamped work notes to `.ollamaclaw/sessions/YYYY-MM-DD.md` |
+| `scripts/session-summary.sh` | View today's log (or a specific date) |
+| `docs/session-log-workflow.md` | Usage guide and when-to-log guidance |
+
+**What Phase 1 logs:**
+
+- High-level work notes (what was done)
+- Git branch and working directory
+- Timestamp
+
+**What Phase 1 does NOT log:**
+
+- Full conversation transcripts
+- Individual tool calls
+- Model responses
+
+See [Session Log Workflow](./session-log-workflow.md) for usage.
+
 ## Recommendations
 
-### Phase 1: Manual Session Logging
+### Phase 1: Manual Session Logging (Implemented)
 
-For now, users can:
+Users can now:
 
-1. Use Claude Code's built-in transcript features
-2. Copy important sessions to `docs/sessions/` for reference
-3. Name files descriptively (e.g., `2026-04-24-claw-code-audit.md`)
+1. Log work notes: `./scripts/session-log.sh "Added provider routing docs"`
+2. View logs: `./scripts/session-summary.sh`
+3. Browse history: `.ollamaclaw/sessions/YYYY-MM-DD.md`
 
 ### Phase 2: Hook-Based Auto-Logging
 

@@ -28,6 +28,12 @@ build/
 # Local logs
 *.log
 
+# Ollamaclaw session logs (intentionally kept for project history)
+# .ollamaclaw/sessions/ is NOT ignored — these are versioned work notes
+
+# Ollamaclaw temp files
+.ollamaclaw/tmp/
+
 # Bootstrap leftovers
 _bootstrap_junk/
 
