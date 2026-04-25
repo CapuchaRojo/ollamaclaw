@@ -4,6 +4,24 @@
 
 This document describes the n8n workflow for automating VetCan social media content creation, approval routing, and publishing orchestration.
 
+**Important: V1 Scope — Approval-Queue/Manual Publishing Only**
+
+V1 of this workflow is **approval-queue and manual publishing only**. The platform API integration nodes shown in this document are **placeholders for future development** and must NOT be enabled.
+
+Any live platform API publishing requires ALL of the following:
+- Separate security review (documented in repo)
+- Credential setup in secure vault (n8n credentials or external secrets manager)
+- Legal/compliance sign-off on API terms of service
+- Explicit written approval from leadership
+
+**Default for V1:**
+1. Content generated via workflow
+2. Approval packet routed via Slack/email
+3. Human publishes manually via platform UI
+4. Metrics tracked manually or via platform analytics exports
+
+Do not enable API publishing nodes without completing the security review and credential setup.
+
 ## Workflow Overview
 
 ```
@@ -264,7 +282,15 @@ This document describes the n8n workflow for automating VetCan social media cont
 }
 ```
 
-**Note:** Platform integrations are placeholders. Manual publishing is the initial approach.
+**Note: V1 Manual Publishing**
+
+Platform API integrations shown above are **placeholders for future development**. V1 uses manual publishing:
+1. Content generated via workflow
+2. Approval packet routed via Slack/email
+3. Human publishes manually via platform UI
+4. Metrics tracked manually or via platform analytics exports
+
+Do not enable API publishing without a separate security review and credential setup.
 
 ---
 

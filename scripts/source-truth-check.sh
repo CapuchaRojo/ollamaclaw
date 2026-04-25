@@ -50,20 +50,132 @@ section() {
 # ============================================================================
 section "A. Route Wording"
 
-PROVIDER_ROUTING="${PROJECT_ROOT}/docs/provider-routing.md"
-ARCHITECTURE="${PROJECT_ROOT}/docs/architecture.md"
+# Scan all docs/*.md for unsafe direct Anthropic routing claims.
+# Unsafe patterns (Ollamaclaw does NOT call Anthropic API directly):
+#   - Arrow patterns: "→ Anthropic API" (implies direct call)
+#   - "Routes to Anthropic API" without negation
+#   - "calls Anthropic API directly" without negation
+#   - "Anthropic API → Response" (wrong final destination)
+#
+# Safe patterns (allowed as explanatory quotes of incorrect wording):
+#   - "does not call Anthropic API directly"
+#   - "not direct Anthropic API routing"
+#   - Quoted examples of incorrect wording in BLOCKER sections
+#   - Patterns inside backticks (quoted patterns being described, not asserted)
 
-# Check for incorrect "direct Anthropic API" claims
-if grep -q "calls Anthropic API directly" "$PROVIDER_ROUTING" 2>/dev/null; then
-    fail "provider-routing.md claims Ollamaclaw 'calls Anthropic API directly'"
-elif grep -q "routes to Anthropic API" "$ARCHITECTURE" 2>/dev/null && ! grep -q "Ollama Cloud" "$ARCHITECTURE" 2>/dev/null; then
-    fail "architecture.md claims 'routes to Anthropic API' without Ollama Cloud clarification"
-else
-    pass "No incorrect 'direct Anthropic API' claims detected"
+FOUND_UNSAFE=0
+
+# Check for arrow patterns ending at Anthropic API (wrong final destination)
+# Skip lines where the pattern is inside backticks or quotes (pattern description)
+ARROW_MATCHES=$(grep -rnE "→[[:space:]]*Anthropic API" "${PROJECT_ROOT}/docs/"*.md 2>/dev/null || true)
+if [[ -n "$ARROW_MATCHES" ]]; then
+    while IFS= read -r line; do
+        [[ -z "$line" ]] && continue
+        # Skip if inside backticks or double-quotes (pattern description in tables/lists)
+        if echo "$line" | grep -qE '\`[^`]*→[^`]*Anthropic API[^`]*\`' 2>/dev/null; then
+            continue
+        fi
+        if echo "$line" | grep -qE '"[^"]*→[^"]*Anthropic API[^"]*"' 2>/dev/null; then
+            continue
+        fi
+        # Safe if it's a blockquote example following "Incorrect wording (BLOCKER):"
+        # Check if line starts with > and is a quoted example
+        if echo "$line" | grep -qE '^>' 2>/dev/null; then
+            # Check if previous few lines contain "Incorrect wording" or "BLOCKER"
+            LINE_NUM=$(echo "$line" | cut -d: -f1)
+            START_NUM=$((LINE_NUM - 3))
+            [[ $START_NUM -lt 1 ]] && START_NUM=1
+            CONTEXT=$(sed -n "${START_NUM},${LINE_NUM}p" "${PROJECT_ROOT}/docs/"*.md 2>/dev/null | head -5)
+            if echo "$CONTEXT" | grep -qiE "Incorrect wording|BLOCKER" 2>/dev/null; then
+                continue
+            fi
+        fi
+        fail "Unsafe arrow routing claim detected: ${line}"
+        FOUND_UNSAFE=1
+    done <<< "$ARROW_MATCHES"
 fi
 
-# Check for correct "does not call Anthropic API directly" statement
-if grep -q "does not call Anthropic API directly" "$PROVIDER_ROUTING" 2>/dev/null; then
+# Check for "Anthropic API →" patterns (implies Anthropic is the source/starting point)
+API_ARROW_MATCHES=$(grep -rnE "Anthropic API[[:space:]]*→" "${PROJECT_ROOT}/docs/"*.md 2>/dev/null || true)
+if [[ -n "$API_ARROW_MATCHES" ]]; then
+    while IFS= read -r line; do
+        [[ -z "$line" ]] && continue
+        # Skip if inside backticks or double-quotes (pattern description)
+        if echo "$line" | grep -qE '\`[^`]*Anthropic API[[:space:]]*→[^`]*\`' 2>/dev/null; then
+            continue
+        fi
+        if echo "$line" | grep -qE '"[^"]*Anthropic API[[:space:]]*→[^"]*"' 2>/dev/null; then
+            continue
+        fi
+        # Safe if it's a blockquote example following "Incorrect wording (BLOCKER):"
+        if echo "$line" | grep -qE '^>' 2>/dev/null; then
+            LINE_NUM=$(echo "$line" | cut -d: -f1)
+            START_NUM=$((LINE_NUM - 3))
+            [[ $START_NUM -lt 1 ]] && START_NUM=1
+            CONTEXT=$(sed -n "${START_NUM},${LINE_NUM}p" "${PROJECT_ROOT}/docs/"*.md 2>/dev/null | head -5)
+            if echo "$CONTEXT" | grep -qiE "Incorrect wording|BLOCKER" 2>/dev/null; then
+                continue
+            fi
+        fi
+        fail "Unsafe Anthropic API arrow claim detected: ${line}"
+        FOUND_UNSAFE=1
+    done <<< "$API_ARROW_MATCHES"
+fi
+
+# Check for "calls Anthropic API directly" WITHOUT negation
+CALLS_MATCHES=$(grep -rnE "calls Anthropic API directly" "${PROJECT_ROOT}/docs/"*.md 2>/dev/null || true)
+if [[ -n "$CALLS_MATCHES" ]]; then
+    while IFS= read -r line; do
+        [[ -z "$line" ]] && continue
+        # Skip if inside backticks or quotes (pattern description)
+        if echo "$line" | grep -qE '\`[^`]*calls Anthropic API directly[^`]*\`|"[^"]*calls Anthropic API directly[^"]*"' 2>/dev/null; then
+            continue
+        fi
+        # Safe if negated: "does not call", "never calls", "not call"
+        if echo "$line" | grep -qiE "(does not|doesn't|never|not)[[:space:]]*(otherwise)?[[:space:]]*call" 2>/dev/null; then
+            continue
+        fi
+        # Safe if it's a quoted BLOCKER example
+        if echo "$line" | grep -qE "BLOCKER|Incorrect wording" 2>/dev/null; then
+            continue
+        fi
+        fail "Unsafe 'calls Anthropic API directly' claim detected: ${line}"
+        FOUND_UNSAFE=1
+    done <<< "$CALLS_MATCHES"
+fi
+
+# Check for "routes to Anthropic API" WITHOUT Ollama Cloud clarification
+ROUTES_MATCHES=$(grep -rnE "routes? to Anthropic API" "${PROJECT_ROOT}/docs/"*.md 2>/dev/null || true)
+if [[ -n "$ROUTES_MATCHES" ]]; then
+    while IFS= read -r line; do
+        [[ -z "$line" ]] && continue
+        # Skip if inside backticks or quotes
+        if echo "$line" | grep -qE '\`[^`]*routes? to Anthropic API[^`]*\`|"[^"]*routes? to Anthropic API[^"]*"' 2>/dev/null; then
+            continue
+        fi
+        # Safe if has Ollama Cloud clarification in same line
+        if echo "$line" | grep -qiE "Ollama Cloud" 2>/dev/null; then
+            continue
+        fi
+        # Safe if negated
+        if echo "$line" | grep -qiE "(does not|doesn't|never|not)[[:space:]]*route" 2>/dev/null; then
+            continue
+        fi
+        # Safe if it's a quoted BLOCKER example
+        if echo "$line" | grep -qE "BLOCKER|Incorrect wording" 2>/dev/null; then
+            continue
+        fi
+        fail "Unsafe 'routes to Anthropic API' claim detected (missing Ollama Cloud clarification): ${line}"
+        FOUND_UNSAFE=1
+    done <<< "$ROUTES_MATCHES"
+fi
+
+if [[ $FOUND_UNSAFE -eq 0 ]]; then
+    pass "No unsafe direct Anthropic routing claims detected in docs/*.md"
+fi
+
+# Check for correct "does not call Anthropic API directly" statement in key docs
+if grep -q "does not call Anthropic API directly" "${PROJECT_ROOT}/docs/provider-routing.md" 2>/dev/null; then
     pass "provider-routing.md correctly states 'does not call Anthropic API directly'"
 else
     warn "provider-routing.md missing explicit 'does not call Anthropic API directly' statement"

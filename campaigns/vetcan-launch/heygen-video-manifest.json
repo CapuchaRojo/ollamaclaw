@@ -8,10 +8,11 @@
     {
       "video_id": "vetcan-launch-001",
       "title": "VetCan Explainer: AI Operations Layer",
-      "description": "60-90 second overview of what VetCan is and what it does",
+      "description": "75 second overview of what VetCan is and what it does",
       "platform": "LinkedIn",
       "duration_seconds": 75,
       "script_file": "scripts/001-explainer.md",
+      "script_status": "planned_script_file",
       "avatar": "business-casual-01",
       "voice": "professional-us-en",
       "background": "neutral-office",
@@ -44,6 +45,7 @@
       "platform": "TikTok",
       "duration_seconds": 20,
       "script_file": "scripts/002-pov-phone.md",
+      "script_status": "planned_script_file",
       "avatar": "casual-friendly-02",
       "voice": "conversational-us-en",
       "background": "clinic-setting",
@@ -51,14 +53,13 @@
       "approval_date": null,
       "published_date": null,
       "source_truth_refs": [
-        "launchpad.pptx:slide-7",
-        "vetcan.zip:modules/booking/"
+        "launchpad.pptx:slide-7"
       ],
       "risk_level": 1,
       "text_overlays": [
-        "POV: You're a vet tech and...",
+        "POV: You're a front desk coordinator and...",
         "Phone. Won't. Stop.",
-        "VetCan: AI ops for vets",
+        "VetCan: AI ops for service businesses",
         "Link in bio"
       ],
       "cta": "Link in bio",
@@ -76,6 +77,7 @@
       "platform": "Instagram",
       "duration_seconds": 30,
       "script_file": "scripts/003-booking-highlight.md",
+      "script_status": "planned_script_file",
       "avatar": "warm-approachable-01",
       "voice": "friendly-us-en",
       "background": "soft-gradient",
@@ -83,7 +85,6 @@
       "approval_date": null,
       "published_date": null,
       "source_truth_refs": [
-        "vetcan.zip:modules/booking/README.md",
         "launchpad.pptx:slide-7"
       ],
       "risk_level": 1,
@@ -103,11 +104,12 @@
     },
     {
       "video_id": "vetcan-launch-004",
-      "title": "Results Highlight: What Clinics Report",
+      "title": "Results Highlight: What Operators Report",
       "description": "45 second video on generalized results from VetCan users",
       "platform": "LinkedIn",
       "duration_seconds": 45,
       "script_file": "scripts/004-results.md",
+      "script_status": "planned_script_file",
       "avatar": "business-casual-01",
       "voice": "professional-us-en",
       "background": "neutral-office",
@@ -115,7 +117,6 @@
       "approval_date": null,
       "published_date": null,
       "source_truth_refs": [
-        "vetcan.zip:modules/reminders/",
         "launchpad.pptx:slide-10"
       ],
       "risk_level": 2,
@@ -136,10 +137,11 @@
     {
       "video_id": "vetcan-launch-005",
       "title": "Final CTA: Book Your Demo",
-      "description": "15-30 second call-to-action for demo requests",
+      "description": "25 second call-to-action for demo requests",
       "platform": "All",
       "duration_seconds": 25,
       "script_file": "scripts/005-final-cta.md",
+      "script_status": "planned_script_file",
       "avatar": "business-casual-01",
       "voice": "professional-us-en",
       "background": "vetcan-branded",

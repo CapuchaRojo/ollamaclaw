@@ -22,8 +22,10 @@ Claude Code manages sessions internally:
 Ollama Cloud acts as a **stateless proxy**:
 
 ```
-Claude Code Request → Ollama CLI → Ollama Cloud → Anthropic API → Response
+Claude Code → Local Ollama (Anthropic-compatible endpoint) → Ollama Cloud → qwen3.5:397b-cloud → Response
 ```
+
+Ollamaclaw does not call Anthropic API directly. Ollama routes requests through Ollama Cloud to the selected model.
 
 Ollama does not persist session state. Each request is independent.
 

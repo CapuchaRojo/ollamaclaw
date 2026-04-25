@@ -44,6 +44,8 @@ This document maps **where marketing truth lives** for VetCan social content cre
 
 **Key positioning:**
 > VetCan is NOT a chatbot. It is an AI operations layer and control surface for calls, chat, booking, reminders, payment-safe next steps, workflow orchestration, evidence, approvals, exports, demos, and launch readiness.
+>
+> Target audience: appointment-based service businesses (e.g., medical cannabis clinics, wellness centers, clinic operators) with front desk teams.
 
 ---
 
@@ -104,7 +106,7 @@ This document maps **where marketing truth lives** for VetCan social content cre
 ### Acceptable Proof Language
 
 ```
-✅ "Veterinary clinics using VetCan report reduced no-show rates"
+✅ "Clinics using VetCan report reduced no-show rates"
 ✅ "Early adopters saw faster booking confirmation times"
 ✅ "Operations teams spend less time on manual follow-ups"
 ```
@@ -113,8 +115,8 @@ This document maps **where marketing truth lives** for VetCan social content cre
 
 ```
 ❌ "Dr. Smith's clinic in Austin saw 40% reduction in no-shows"
-❌ "Call transcript from March 15: 'I need to reschedule my dog'"
-❌ "ABC Veterinary Hospital increased revenue by $50,000"
+❌ "Call transcript from March 15: [raw transcript]"
+❌ "ABC Clinic increased revenue by $50,000"
 ```
 
 ### Why These Rules Exist

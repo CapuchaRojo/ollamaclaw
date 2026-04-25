@@ -10,7 +10,7 @@
 | Start Date | 2026-05-01 |
 | End Date | 2026-06-30 |
 | Budget | [TBD] |
-| Primary Goal | Demo requests from qualified veterinary clinics |
+| Primary Goal | Demo requests from qualified appointment-based service businesses |
 | Secondary Goals | Awareness, engagement, website traffic |
 
 ---
@@ -19,7 +19,7 @@
 
 ### Primary Goal (North Star)
 
-**Demo Requests:** Generate qualified demo requests from veterinary clinic owners and decision-makers
+**Demo Requests:** Generate qualified demo requests from appointment-based service business owners and decision-makers (e.g., medical cannabis clinics, wellness centers)
 
 **Target:** [X] demo requests from social channels during campaign period
 
@@ -41,17 +41,17 @@
 
 | Attribute | Description |
 |-----------|-------------|
-| Role | Veterinary clinic owners, practice managers |
-| Clinic Size | 1-5 veterinarians, 5-20 staff |
+| Role | Clinic owners, practice managers, front desk leads |
+| Clinic Size | 1-5 providers, 5-20 staff |
 | Pain Points | Phone tag, booking inefficiency, no-shows, staff burnout |
-| Tech Comfort | Moderate to high, using practice management software |
+| Tech Comfort | Moderate to high, using scheduling/management software |
 | Decision Power | Direct (owner) or influential (practice manager) |
 
 ### Secondary Audience
 
 | Audience | Why They Matter |
 |----------|-----------------|
-| Veterinary technicians | Influencers, voice of operations |
+| Front desk coordinators | Influencers, voice of operations |
 | Industry partners | Amplification, credibility |
 | VC / Tech community | Awareness, potential partnerships |
 
@@ -61,7 +61,7 @@
 
 ### Pillar 1: The Problem (Week 1-2)
 
-**Theme:** "Phone tag is stealing from your clinic"
+**Theme:** "Phone tag is stealing from your operations"
 
 **Content Focus:**
 - The hidden cost of unanswered calls
@@ -75,7 +75,7 @@
 
 ### Pillar 2: The Solution (Week 3-4)
 
-**Theme:** "VetCan: AI operations layer for veterinary clinics"
+**Theme:** "VetCan: AI operations layer for appointment-based clinics"
 
 **Content Focus:**
 - What VetCan is (and isn't)
@@ -91,7 +91,7 @@
 
 ### Pillar 3: Proof and Results (Week 5-6)
 
-**Theme:** "Clinics using VetCan see results"
+**Theme:** "Operators using VetCan see results"
 
 **Content Focus:**
 - Generalized results (redacted)
@@ -188,6 +188,8 @@
 **Free Demo:** 30-minute personalized walkthrough of VetCan
 
 **Landing Page:** vetcan.com/demo
+
+**Note:** Positioning is for appointment-based service businesses (e.g., medical cannabis clinics, wellness centers). Veterinary is a future vertical.
 
 **Follow-up:** Within 24 hours of submission
 

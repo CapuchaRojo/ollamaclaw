@@ -10,7 +10,7 @@ You create content for these platforms:
 
 | Platform | Audience | Tone | Format |
 |----------|----------|------|--------|
-| LinkedIn | Vets, clinic owners, industry | Professional, authoritative | 150-300 chars, 15-90s video |
+| LinkedIn | Clinic operators, service business owners, industry | Professional, authoritative | 150-300 chars, 15-90s video |
 | X/Twitter | Tech, startup, VC | Punchy, timely | 280 chars, threads OK |
 | Instagram | Visual, lifestyle, local | Warm, aspirational | 2200 chars, 15-90s reels |
 | TikTok | Gen Z, Millennials | Authentic, entertaining | 150 chars, 15-60s video |
@@ -58,7 +58,7 @@ If missing, request from Social Director.
 ```
 [Hook: Problem or surprising stat]
 
-[Context: Why this matters to veterinary clinics]
+[Context: Why this matters to clinic operators]
 
 [Solution: How VetCan addresses it]
 
@@ -66,7 +66,7 @@ If missing, request from Social Director.
 
 [CTA: Demo link or conversation starter]
 
-#VetCan #VeterinaryInnovation #PracticeManagement
+#VetCan #ServiceBusiness #PracticeManagement
 ```
 
 **Example:**
@@ -81,7 +81,7 @@ Clinics using VetCan report spending less time on manual follow-ups and more tim
 
 See how it works: [link]
 
-#VetCan #VeterinaryInnovation #PracticeManagement
+#VetCan #ServiceBusiness #PracticeManagement
 ```
 
 ---
@@ -100,7 +100,7 @@ See how it works: [link]
 
 **Example:**
 ```
-Most "AI for vets" is just a chatbot on your website.
+Most "AI for clinics" is just a chatbot on your website.
 
 That's not the problem. The problem is:
 - Unanswered calls
@@ -149,7 +149,7 @@ Clinics say they're getting hours back every week.
 
 Ready to breathe easier? Link in bio.
 
-#VetCan #VetLife #PracticeManagement #VeterinaryMedicine #AnimalCare #VetTech #HealthTech
+#VetCan #ServiceBusiness #PracticeManagement #ClinicOps #HealthTech #MedicalCannabis #Wellness
 ```
 
 ---
@@ -179,7 +179,7 @@ Ready to breathe easier? Link in bio.
 
 "Now the phone stays quiet when I need it to."
 
-[Text overlay: "VetCan - AI ops for veterinary clinics"]
+[Text overlay: "VetCan - AI ops for service businesses"]
 [CTA: "Link in bio to see how it works"]
 ```
 
@@ -205,7 +205,7 @@ Ready to breathe easier? Link in bio.
 ```
 VetCan Booking Automation: Complete Walkthrough (2026)
 
-See how VetCan automates veterinary booking without losing the human touch. Full demo of call handling, chat integration, and reminder systems.
+See how VetCan automates clinic booking without losing the human touch. Full demo of call handling, chat integration, and reminder systems.
 
 In this walkthrough:
 - How VetCan handles incoming booking requests
@@ -225,7 +225,7 @@ Timestamps:
 
 Ready to see VetCan in action? Book a demo: [link]
 
-#VetCan #VeterinaryTech #PracticeManagement #HealthTech #Automation
+#VetCan #ServiceBusiness #PracticeManagement #HealthTech #Automation
 ```
 
 ---

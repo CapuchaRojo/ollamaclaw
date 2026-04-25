@@ -8,9 +8,9 @@ This document defines the thematic pillars for VetCan social media content. All 
 
 ## Pillar 1: The Problem
 
-**Theme:** "Phone tag is stealing from your clinic"
+**Theme:** "Phone tag is stealing from your operations"
 
-**Purpose:** Make the pain visible and quantified. Help clinic owners recognize the hidden costs of manual operations.
+**Purpose:** Make the pain visible and quantified. Help clinic operators recognize the hidden costs of manual operations.
 
 ### Key Messages
 
@@ -26,7 +26,7 @@ This document defines the thematic pillars for VetCan social media content. All 
 - **Stat-driven:** "X hours per week lost to phone tag"
 - **Relatable:** "That feeling when the phone rings during lunch"
 - **Financial:** "Revenue lost from no-shows adds up fast"
-- **Emotional:** "Your staff didn't join vet med to play phone tag"
+- **Emotional:** "Your staff didn't join healthcare to play phone tag"
 
 ### Sample Hooks
 
@@ -35,6 +35,8 @@ This document defines the thematic pillars for VetCan social media content. All 
 "How much revenue did no-shows cost you last month?"
 "Your staff is amazing. But they shouldn't have to be professional tag players."
 "The hidden cost of 'We'll call you back'..."
+
+Note: Frame for appointment-based service businesses (e.g., medical cannabis clinics, wellness centers). Veterinary is a future vertical.
 ```
 
 ### Content Ideas
@@ -51,9 +53,9 @@ This document defines the thematic pillars for VetCan social media content. All 
 
 ## Pillar 2: The Solution
 
-**Theme:** "VetCan: AI operations layer for veterinary clinics"
+**Theme:** "VetCan: AI operations layer for appointment-based service businesses"
 
-**Purpose:** Introduce VetCan as the solution. Clarify what it is (and isn't). Show how it fits into existing workflows.
+**Purpose:** Introduce VetCan as the solution. Clarify what it is (and isn't). Show how it fits into existing workflows for clinic operators and front desk teams.
 
 ### Key Messages
 
@@ -76,9 +78,9 @@ This document defines the thematic pillars for VetCan social media content. All 
 ### Sample Hooks
 
 ```
-"Most 'AI for vets' is just a chatbot on your website. That's not the problem."
+"Most 'AI solutions' are just chatbots on your website. That's not the problem."
 "VetCan isn't a chatbot. It's an AI operations layer."
-"Here's what actual veterinary automation looks like..."
+"Here's what actual clinic automation looks like..."
 "Built for launch, not experiments."
 ```
 
@@ -96,9 +98,9 @@ This document defines the thematic pillars for VetCan social media content. All 
 
 ## Pillar 3: Proof and Results
 
-**Theme:** "Clinics using VetCan see results"
+**Theme:** "Operators using VetCan see results"
 
-**Purpose:** Provide social proof and evidence of results. Use redacted, generalized language to protect customer privacy while building credibility.
+**Purpose:** Provide social proof and evidence of results. Use redacted, generalized language to protect customer privacy while building credibility. Frame for appointment-based service businesses (e.g., medical cannabis clinics, wellness centers); veterinary is a future vertical.
 
 ### Key Messages
 
@@ -120,9 +122,9 @@ This document defines the thematic pillars for VetCan social media content. All 
 ### Sample Hooks
 
 ```
-"Veterinary clinics using VetCan report reduced no-show rates."
+"Clinics using VetCan report reduced no-show rates."
 "Here's what changes when booking is automatic..."
-"Clinics say they're getting hours back every week."
+"Clinic operators say they're getting hours back every week."
 "The reminder system that actually works."
 ```
 
@@ -140,7 +142,7 @@ This document defines the thematic pillars for VetCan social media content. All 
 
 **Acceptable:**
 ```
-✅ "Veterinary clinics report reduced no-show rates"
+✅ "Clinics report reduced no-show rates"
 ✅ "Early adopters saw faster booking confirmation"
 ✅ "Operations teams spend less time on manual follow-ups"
 ```
@@ -148,7 +150,7 @@ This document defines the thematic pillars for VetCan social media content. All 
 **Not Acceptable:**
 ```
 ❌ "Dr. Smith's clinic reduced no-shows by 40%"
-❌ "ABC Veterinary Hospital increased revenue by $50k"
+❌ "ABC Clinic increased revenue by $50k"
 ❌ Raw call transcripts or customer names without releases
 ```
 
@@ -219,16 +221,16 @@ This document defines the thematic pillars for VetCan social media content. All 
 ## Hashtag Strategy by Pillar
 
 ### Pillar 1 (Problem)
-`#VetLife #PracticeManagement #VeterinaryMedicine #VetTech #BurnoutPrevention`
+`#PracticeManagement #ServiceBusiness #ClinicOps #FrontDesk #BurnoutPrevention #HealthTech`
 
 ### Pillar 2 (Solution)
-`#VetCan #VeterinaryInnovation #HealthTech #AI #PracticeManagement #VetTech`
+`#VetCan #ServiceBusiness #HealthTech #AI #PracticeManagement #ClinicOps #Automation`
 
 ### Pillar 3 (Proof)
-`#VetCan #VeterinarySuccess #PracticeGrowth #VetLife #AnimalCare`
+`#VetCan #BusinessSuccess #PracticeGrowth #ClinicOps #ServiceBusiness #HealthTech`
 
 ### Pillar 4 (CTA)
-`#VetCan #BookADemo #VeterinaryTech #PracticeManagement #HealthTech`
+`#VetCan #BookADemo #ServiceBusiness #PracticeManagement #HealthTech #MedicalCannabis`
 
 ---
 

@@ -37,7 +37,7 @@ For each feature, extract:
 
 **Capability:** VetCan handles booking requests via call or chat, integrates with clinic scheduling system, sends automated reminders
 
-**Source:** vetcan.zip:modules/booking/, launchpad.pptx:slide-7
+**Source:** launchpad.pptx:slide-7
 
 **Benefit Language:** "Reduce phone tag and fill your schedule automatically"
 
@@ -45,6 +45,7 @@ For each feature, extract:
 - "Fully automated" (human review still involved)
 - Specific integration names unless documented
 - "Real-time" unless explicitly stated
+- Service-business capabilities unless explicitly framed for target vertical (medical cannabis clinics, wellness centers)
 ```
 
 ---
@@ -56,7 +57,7 @@ When extracting social proof:
 ### Acceptable Formats
 
 ```
-✅ "Veterinary clinics report reduced no-show rates with automated reminders"
+✅ "Clinics report reduced no-show rates with automated reminders"
 ✅ "Early adopters saw faster booking confirmation times"
 ✅ "Operations teams spend less time on manual follow-ups"
 ```
@@ -89,7 +90,7 @@ From `launchpad.pptx`, extract:
 **What VetCan Is:** AI operations layer and control surface
 **What VetCan Is NOT:** Chatbot, simple answering service
 **Key Capabilities:** Calls, chat, booking, reminders, workflow orchestration, evidence, approvals, exports, demos, launch readiness
-**Target Customer:** Veterinary clinics seeking operational efficiency
+**Target Customer:** Appointment-based service businesses (e.g., medical cannabis clinics, wellness centers) seeking operational efficiency
 **Primary Pain Point:** Manual, repetitive tasks consuming staff time
 ```
 
@@ -163,8 +164,8 @@ If you encounter these in source documents, flag them:
 ### Verified Capabilities
 | Feature | Source | Claim-Ready Language |
 |---------|--------|---------------------|
-| Automated booking | vetcan.zip:modules/booking/README.md | "VetCan handles booking requests via call or chat" |
-| Reminder system | vetcan.zip:modules/reminders/ | "Automated reminders reduce no-shows" |
+| Automated booking | launchpad.pptx:slide-7 | "VetCan handles booking requests via call or chat" |
+| Reminder system | launchpad.pptx:slide-7 | "Automated reminders reduce no-shows" |
 | Calendar integration | launchpad.pptx:slide-7 | "Integrates with your existing schedule" |
 
 ### Benefit Statements
@@ -173,7 +174,7 @@ If you encounter these in source documents, flag them:
 - "Never miss a booking opportunity"
 
 ### Proof Language (Redacted)
-- "Veterinary clinics report reduced no-show rates with automated reminders"
+- "Clinics report reduced no-show rates with automated reminders"
 - "Operations teams spend less time on manual follow-ups"
 
 ### Positioning Guardrails

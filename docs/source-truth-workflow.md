@@ -19,7 +19,7 @@ The `./scripts/source-truth-check.sh` script validates:
 
 | Check | Type | Description |
 |-------|------|-------------|
-| **A. Route Wording** | FAIL if incorrect | Detects claims like "routes to Anthropic API" or "calls Anthropic API directly" without Ollama Cloud clarification |
+| **A. Route Wording** | FAIL if incorrect | Scans all `docs/*.md` for unsafe Anthropic routing claims: "Ollama Cloud → Anthropic API", "Routes to Anthropic API", "calls Anthropic API directly", "Anthropic API → Response". Safe explanatory mentions allowed only when negated (e.g., "does not call Anthropic API directly"). |
 | **B. Local Fallback Claims** | WARN if risky | Flags docs that claim local models are "stable fallbacks" (should be "experimental" or "direct-helper-only") |
 | **C. Script References** | WARN if missing | Extracts `./scripts/*` references from docs and verifies files exist and are executable |
 | **D. Settings Safety** | FAIL if unsafe | Checks for dangerous auto-allow rules (`Bash:git commit`, `Bash:git push`) and Git-tracked local settings |
@@ -110,15 +110,22 @@ Run `./scripts/source-truth-check.sh` in these situations:
 **Canonical truth:** Ollamaclaw uses **Ollama Cloud / selected Ollama model routing**, not direct Anthropic API routing.
 
 **Correct wording:**
-> "Claude Code speaks to a local Ollama endpoint using Anthropic-compatible routing. Ollama then routes requests through Ollama Cloud to the selected Ollama model, usually `qwen3.5:397b-cloud`."
+> "Claude Code Request → local Ollama Anthropic-compatible endpoint → Ollama Cloud → selected Ollama model → Response"
+
+Or:
+> "Claude Code speaks to a local Ollama endpoint using Anthropic-compatible routing. Ollama then routes requests through Ollama Cloud to the selected Ollama model, usually `qwen3.5:397b-cloud`. Ollamaclaw does not call Anthropic API directly."
 
 **Incorrect wording (BLOCKER):**
+> "Claude Code Request → Ollama CLI → Ollama Cloud → Anthropic API → Response"
+
+Or:
 > "Routes to Anthropic API with cloud-managed credentials."
 
 **Why:** The distinction matters because:
 1. Ollamaclaw does not manage Anthropic API credentials directly.
 2. Ollama Cloud is the routing layer that handles Anthropic authentication.
 3. Future provider changes happen at the Ollama Cloud layer, not in Ollamaclaw code.
+4. The final destination is an Ollama model (e.g., `qwen3.5:397b-cloud`), not Anthropic API directly.
 
 ---
 

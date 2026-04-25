@@ -8,7 +8,7 @@ This document defines how VetCan content adapts to each social media platform. E
 
 | Platform | Primary Audience | Content Type | Engagement Goal |
 |----------|------------------|--------------|-----------------|
-| LinkedIn | Vets, clinic owners, industry | Professional, educational | Demo requests, leads |
+| LinkedIn | Clinic operators, service business owners, industry | Professional, educational | Demo requests, leads |
 | X/Twitter | Tech, startup, VC | Punchy, timely | Awareness, shares |
 | Instagram | Visual, lifestyle, local | Polished, aspirational | Brand affinity |
 | TikTok | Younger, discovery | Authentic, entertaining | Viral reach |
@@ -20,7 +20,7 @@ This document defines how VetCan content adapts to each social media platform. E
 
 ### LinkedIn
 
-**Audience:** Veterinary professionals, clinic owners, industry partners
+**Audience:** Clinic operators, service business owners, industry partners
 
 | Attribute | Specification |
 |-----------|---------------|
@@ -39,6 +39,8 @@ This document defines how VetCan content adapts to each social media platform. E
 - Customer success stories (redacted)
 - Industry insights
 - Team/hiring posts
+
+**Note:** Target audience is appointment-based service businesses (e.g., medical cannabis clinics, wellness centers, clinic operators). Veterinary is a future vertical.
 
 **Example post structure:**
 ```
@@ -189,11 +191,13 @@ This document defines how VetCan content adapts to each social media platform. E
 
 | Platform | Adaptation |
 |----------|------------|
-| LinkedIn | "How automated booking reduced admin time by 30% for veterinary clinics" |
-| X/Twitter | "Thread: 5 ways we automated the boring stuff so vets can focus on patients 🧵" |
+| LinkedIn | "How automated booking reduced admin time by 30% for clinic operators" |
+| X/Twitter | "Thread: 5 ways we automated the boring stuff so front desk teams can focus on patients 🧵" |
 | Instagram | Carousel: "Before VetCan vs. After VetCan" booking flow visuals |
-| TikTok | Skit: "POV: You're a vet tech and the phone won't stop ringing" |
+| TikTok | Skit: "POV: You're a front desk coordinator and the phone won't stop ringing" |
 | YouTube | "VetCan Booking Automation: Complete Walkthrough" |
+
+**Note:** Examples frame for appointment-based service businesses (e.g., medical cannabis clinics, wellness centers). Veterinary is a future vertical.
 
 ---
 
@@ -202,17 +206,24 @@ This document defines how VetCan content adapts to each social media platform. E
 ### Branded Hashtags
 
 - `#VetCan`
-- `#VeterinaryTech`
-- `#VetPracticeManagement`
+- `#ServiceBusiness`
+- `#ClinicPracticeManagement`
 
 ### Category Hashtags
+
+- `#PracticeManagement`
+- `#HealthTech`
+- `#ServiceBusiness`
+- `#ClinicOps`
+
+### Future Vertical Hashtags (Not for Current Campaign)
 
 - `#VeterinaryMedicine`
 - `#VetLife`
 - `#AnimalCare`
-- `#PracticeManagement`
-- `#HealthTech`
 - `#VeterinaryInnovation`
+- `#VetTech`
+- `#VetTok`
 
 ### Platform-Specific Hashtags
 
@@ -220,8 +231,8 @@ This document defines how VetCan content adapts to each social media platform. E
 |----------|-----------------|
 | LinkedIn | `#Leadership`, `#Innovation`, `#Healthcare` |
 | X/Twitter | `#Startup`, `#AI`, `#SaaS` |
-| Instagram | `#VetTech`, `#VetLife`, `#AnimalLovers` |
-| TikTok | `#VetTok`, `#DayInTheLife`, `#WorkHack` |
+| Instagram | `#ServiceBusiness`, `#ClinicLife`, `#BusinessLovers` |
+| TikTok | `#DayInTheLife`, `#WorkHack`, `#ClinicOps` |
 | YouTube | `#Tutorial`, `#HowTo`, `#Demo` |
 
 ---

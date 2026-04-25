@@ -4,6 +4,23 @@
 
 This document describes the n8n workflow for routing VetCan social content through the appropriate approval gates based on risk level.
 
+**Important: V1 Scope — Approval-Queue/Manual Publishing Only**
+
+V1 of this workflow is **approval-queue only**. The routing and notification system is production-ready, but:
+
+- Platform API publishing nodes are **placeholders for future development**
+- Manual publishing via platform UI is the **required approach for V1**
+- Any live API publishing requires a **separate security review** and documented approval
+- Credentials must **never** be stored in workflow definitions or committed to git
+
+**V1 Workflow:**
+1. Use this n8n workflow to route content through approval gates
+2. Approvers review via Slack/email
+3. Human publishes manually via platform UI (LinkedIn, X, Instagram, etc.)
+4. Metrics tracked manually or via platform analytics exports
+
+Do not enable any API publishing automation until V2 security review is complete and credentials are properly secured.
+
 ## Workflow Overview
 
 ```

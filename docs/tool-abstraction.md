@@ -10,8 +10,8 @@ In cloud mode (`qwen3.5:397b-cloud`), tool calls follow this path:
 
 ```
 ┌─────────────┐     ┌──────────────┐     ┌─────────────────┐     ┌──────────────┐
-│  Claude     │────▶│  Ollama CLI  │────▶│  Ollama Cloud   │────▶│  Anthropic   │
-│  Code CLI   │     │  (local)     │     │  (proxy)        │     │  API         │
+│  Claude     │────▶│  Ollama CLI  │────▶│  Ollama Cloud   │────▶│  Ollama      │
+│  Code CLI   │     │  (local)     │     │  (proxy)        │     │  Model       │
 └─────────────┘     └──────────────┘     └─────────────────┘     └──────────────┘
        │                                                                │
        │  Tool call JSON                                                │
@@ -23,6 +23,8 @@ In cloud mode (`qwen3.5:397b-cloud`), tool calls follow this path:
 │  Execution  │
 └─────────────┘
 ```
+
+**Note:** The final destination is an Ollama model (e.g., `qwen3.5:397b-cloud`), not Anthropic API directly. Ollamaclaw does not call Anthropic API directly.
 
 **Key property:** The model returns properly structured tool calls that Claude Code parses and executes. The user never sees raw tool-call JSON.
 

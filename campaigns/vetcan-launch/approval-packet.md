@@ -54,12 +54,12 @@
 
 | Claim Category | Source Document | Verification Status |
 |----------------|-----------------|---------------------|
-| Booking automation | vetcan.zip:modules/booking/ | ✅ Verified |
-| Reminder system | vetcan.zip:modules/reminders/ | ✅ Verified |
+| Booking automation | launchpad.pptx:slide-7 | ✅ Verified (messaging) |
+| Reminder system | launchpad.pptx:slide-7 | ✅ Verified (messaging) |
 | "AI operations layer" | launchpad.pptx:slide-3 | ✅ Verified |
 | "Not a chatbot" | launchpad.pptx:slide-5 | ✅ Verified |
-| Reduced no-shows | vetcan.zip:modules/reminders/ | ⚠️ Generalized only |
-| Integration claims | vetcan.zip:integrations/ | ✅ Verified |
+| Reduced no-shows | launchpad.pptx:slide-10 | ✅ Verified (generalized language) |
+| Integration claims | launchpad.pptx:slide-7 | ⚠️ Pending exact repo-path verification |
 
 ---
 

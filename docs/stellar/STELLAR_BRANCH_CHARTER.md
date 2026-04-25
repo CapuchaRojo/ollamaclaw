@@ -67,31 +67,32 @@ Create a **marketing-ops sidecar** for VetCan that enables:
 ## Files to Create
 
 ### Docs (`docs/stellar/`)
-- [ ] `STELLAR_BRANCH_CHARTER.md` (this file)
-- [ ] `vetcan-social-source-map.md`
-- [ ] `heygen-production-rules.md`
-- [ ] `platform-channel-matrix.md`
-- [ ] `approval-and-risk-rules.md`
-- [ ] `campaign-measurement-plan.md`
+- [x] `STELLAR_BRANCH_CHARTER.md` (this file)
+- [x] `vetcan-social-source-map.md`
+- [x] `heygen-production-rules.md`
+- [x] `platform-channel-matrix.md`
+- [x] `approval-and-risk-rules.md`
+- [x] `campaign-measurement-plan.md`
 
 ### Prompts (`prompts/stellar/`)
-- [ ] `00_social_director.md`
-- [ ] `01_vetcan_truth_extractor.md`
-- [ ] `02_platform_copy_agent.md`
-- [ ] `03_heygen_script_agent.md`
-- [ ] `04_approval_packet_agent.md`
-- [ ] `05_social_qa_auditor.md`
+- [x] `00_social_director.md`
+- [x] `01_vetcan_truth_extractor.md`
+- [x] `02_platform_copy_agent.md`
+- [x] `03_heygen_script_agent.md`
+- [x] `04_approval_packet_agent.md`
+- [x] `05_social_qa_auditor.md`
 
 ### Campaigns (`campaigns/vetcan-launch/`)
-- [ ] `campaign-brief.md`
-- [ ] `content-pillars.md`
-- [ ] `heygen-video-manifest.json`
-- [ ] `approval-packet.md`
+- [x] `campaign-brief.md`
+- [x] `content-pillars.md`
+- [x] `heygen-video-manifest.json`
+- [x] `approval-packet.md`
+- [x] `scripts/` directory with 5 HeyGen scripts
 
 ### Workflows (`workflows/n8n/`)
-- [ ] `stellar-social-pipeline.md`
-- [ ] `approval-gate-blueprint.md`
-- [ ] `weekly-analytics-review.md`
+- [x] `stellar-social-pipeline.md`
+- [x] `approval-gate-blueprint.md`
+- [x] `weekly-analytics-review.md`
 
 ## Success Criteria
 
